@@ -1,0 +1,7 @@
+package com.company.model;
+
+public class Adicional {
+    private Long id;
+    private String nome;
+    private Double multiplicador;
+}
