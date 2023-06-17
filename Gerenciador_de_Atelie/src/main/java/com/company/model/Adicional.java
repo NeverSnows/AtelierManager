@@ -11,7 +11,6 @@ public class Adicional {
     private String nome;
     private Double multiplicador;
     @ManyToOne
-    @JoinColumn(name = "item_pedido_id")
     private ItemPedido itemPedido;
 
 

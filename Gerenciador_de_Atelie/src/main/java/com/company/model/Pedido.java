@@ -6,7 +6,6 @@ import javax.persistence.*;
 import java.util.Date;
 @Entity
 @Table(name = "Pedido")
-@PrimaryKeyJoinColumn(name = "orcamento_id")
 public class Pedido extends Orcamento{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

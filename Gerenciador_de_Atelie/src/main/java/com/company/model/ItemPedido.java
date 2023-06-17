@@ -18,13 +18,20 @@ public class ItemPedido {
     private Tamanho tamanho;
 
     @ManyToOne
+    @JoinColumn(name = "tecido_id")
     private Tecido tecido;
-    private String cor;
 
+    @Column(name = "Cor")
+    private String cor;
 
     @OneToMany(mappedBy = "itemPedido")
     private List<Adicional> adicionais;
 
+    @ManyToOne
+    @JoinColumn(name = "orcamento_id")
+    private Orcamento orcamento;
+
+    @Column(name = "valorItem")
     private Double valorItem;
 
     public Long getId() {
@@ -59,7 +66,7 @@ public class ItemPedido {
     public void setTecido(Tecido tecido) {
         this.tecido = tecido;
     }
-/*
+
     public List<Adicional> getAdicionais() {
         return adicionais;
     }
@@ -67,7 +74,7 @@ public class ItemPedido {
     public void setAdicionais(List<Adicional> adicionais) {
         this.adicionais = adicionais;
     }
-*/
+
     public Double getValorItem() {
         return valorItem;
     }

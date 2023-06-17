@@ -5,11 +5,10 @@ import java.util.Date;
 import java.util.List;
 @Entity
 @Table(name = "Orcamento")
-@Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "tipo")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Orcamento {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @ManyToOne
@@ -17,7 +16,8 @@ public class Orcamento {
     @ManyToOne
     private Cliente cliente;
     private Date dataCriacao;
-    @OneToMany
+    @OneToMany(mappedBy = "orcamento")
+
     private List<ItemPedido> itensPedido;
     private Double valorTotal;
     private String observacoes;
