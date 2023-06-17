@@ -12,6 +12,20 @@ public class Adicional {
     private Double multiplicador;
     @ManyToOne
     private ItemPedido itemPedido;
+    public Adicional(){}
+
+    public Adicional(String nome, Double multiplicador, ItemPedido itemPedido) {
+        setNome(nome);
+        setMultiplicador(multiplicador);
+        setItemPedido(itemPedido);
+    }
+
+    public Adicional(Long id, String nome, Double multiplicador, ItemPedido itemPedido) {
+        setId(id);
+        setNome(nome);
+        setMultiplicador(multiplicador);
+        setItemPedido(itemPedido);
+    }
 
 
     public Long getId() {
@@ -37,4 +51,10 @@ public class Adicional {
     public void setMultiplicador(Double multiplicador) {
         this.multiplicador = multiplicador;
     }
-}
+    public ItemPedido getItemPedido() {
+        return itemPedido;
+    }
+
+    public void setItemPedido(ItemPedido itemPedido) {
+        this.itemPedido = itemPedido;
+    }}

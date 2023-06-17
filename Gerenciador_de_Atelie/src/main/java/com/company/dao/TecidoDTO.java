@@ -1,21 +1,17 @@
-package com.company.model;
+package com.company.dao;
 
-import com.company.dao.Identificavel;
+import javax.persistence.TypedQuery;
+import java.util.List;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "Tecido")
-public class Tecido implements Identificavel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+public class TecidoDTO {
     private Long id;
     private String nome;
     private Double preco;
-    public Tecido() {
+
+    public TecidoDTO() {
     }
-    public Tecido(String nome, Double preco) {
+
+    public TecidoDTO(String nome, Double preco) {
         this.nome = nome;
         this.preco = preco;
     }
@@ -28,11 +24,11 @@ public class Tecido implements Identificavel {
         this.id = id;
     }
 
-    public String getNome() {
+    public String getName() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setName(String nome) {
         this.nome = nome;
     }
 
@@ -43,4 +39,6 @@ public class Tecido implements Identificavel {
     public void setPreco(Double preco) {
         this.preco = preco;
     }
+
+
 }

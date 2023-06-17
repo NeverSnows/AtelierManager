@@ -58,7 +58,6 @@ public class ItemPedido {
         this.tamanho = tamanho;
     }
 
-
     public Tecido getTecido() {
         return tecido;
     }
@@ -82,4 +81,6 @@ public class ItemPedido {
     public void setValorItem(Double valorItem) {
         this.valorItem = valorItem;
     }
+
+    //public Double calculaValorItem(Peca peca, Tecido tecido, )
 }

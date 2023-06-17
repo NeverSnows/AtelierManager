@@ -5,16 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8fe37a1-ad24-452e-800d-71fd31deb106" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/TecidoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/EntityManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/GenericDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/Identificavel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/TecidoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/TecidoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/UsuarioDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Adicional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Adicional.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/ItemPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/ItemPedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Orcamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Orcamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Tecido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Tecido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Adicional.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Adicional.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/ItemPedido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/ItemPedido.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Orcamento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Orcamento.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Pedido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Pedido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Tecido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Tecido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +34,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
