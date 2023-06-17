@@ -1,13 +1,18 @@
 package com.company.model;
 
+import javax.persistence.*;
 import java.util.List;
-
-public class Cliente {
+@Entity
+@Table(name = "Cliente")
+public class Cliente{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String telefone;
     private String email;
-    private List<Medida> medidas; //medidas do cliente
+    @OneToMany(mappedBy = "cliente")
+    private List<MedidaCliente> medidas; // medidas do cliente
 
     public Long getId() {
         return id;
@@ -41,11 +46,11 @@ public class Cliente {
         this.email = email;
     }
 
-    public List<Medida> getMedidas() {
+    public List<MedidaCliente> getMedidas() {
         return medidas;
     }
 
-    public void setMedidas(List<Medida> medidas) {
+    public void setMedidas(List<MedidaCliente> medidas) {
         this.medidas = medidas;
     }
 }

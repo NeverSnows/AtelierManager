@@ -1,4 +1,7 @@
 package com.company.model;
 
-public class Tamanho {
+import javax.persistence.*;
+
+public enum Tamanho {
+    XPP, PP, P, M, G, GG, XGG
 }

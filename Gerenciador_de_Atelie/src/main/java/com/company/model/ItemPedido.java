@@ -1,15 +1,30 @@
 package com.company.model;
 
+import javax.persistence.*;
 import java.util.List;
-
+@Entity
+@Table(name = "ItemPedido")
 public class ItemPedido {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ManyToOne
+    @JoinColumn(name = "peca_id")
     private Peca peca;
+
+    @Column(name = "tamanho")
+    @Enumerated(EnumType.STRING) // Mapear como string
     private Tamanho tamanho;
-    private Modelo modelo;
+
+    @ManyToOne
     private Tecido tecido;
-    //private String cor;
+    private String cor;
+
+
+    @OneToMany(mappedBy = "itemPedido")
     private List<Adicional> adicionais;
+
     private Double valorItem;
 
     public Long getId() {
@@ -36,13 +51,6 @@ public class ItemPedido {
         this.tamanho = tamanho;
     }
 
-    public Modelo getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(Modelo modelo) {
-        this.modelo = modelo;
-    }
 
     public Tecido getTecido() {
         return tecido;
@@ -51,7 +59,7 @@ public class ItemPedido {
     public void setTecido(Tecido tecido) {
         this.tecido = tecido;
     }
-
+/*
     public List<Adicional> getAdicionais() {
         return adicionais;
     }
@@ -59,7 +67,7 @@ public class ItemPedido {
     public void setAdicionais(List<Adicional> adicionais) {
         this.adicionais = adicionais;
     }
-
+*/
     public Double getValorItem() {
         return valorItem;
     }

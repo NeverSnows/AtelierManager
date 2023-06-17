@@ -1,4 +1,9 @@
 package com.company.model;
 
-public class TipoPagamento {
+public enum TipoPagamento {
+    CARTAO_CREDITO,
+    CARTAO_DEBITO,
+    BOLETO,
+    DINHEIRO
 }
+

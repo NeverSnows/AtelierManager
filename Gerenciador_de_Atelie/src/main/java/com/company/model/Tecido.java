@@ -1,6 +1,13 @@
 package com.company.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Tecido")
 public class Tecido {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
     private String name;
     private Double preco;

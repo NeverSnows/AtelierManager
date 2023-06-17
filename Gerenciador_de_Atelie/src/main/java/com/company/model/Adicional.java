@@ -2,7 +2,7 @@ package com.company.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Adicionais")
+@Table(name = "Adicional")
 public class Adicional {
 
     @Id
@@ -10,6 +10,10 @@ public class Adicional {
     private Long id;
     private String nome;
     private Double multiplicador;
+    @ManyToOne
+    @JoinColumn(name = "item_pedido_id")
+    private ItemPedido itemPedido;
+
 
     public Long getId() {
         return id;

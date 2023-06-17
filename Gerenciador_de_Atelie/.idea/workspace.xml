@@ -5,13 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8fe37a1-ad24-452e-800d-71fd31deb106" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Adicional.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/model/MedidaCliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/model/MedidaPeca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Adicional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Adicional.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/ItemPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/ItemPedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Medida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Medida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Modelo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Orcamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Orcamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Peca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Peca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Situacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Situacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Tamanho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Tamanho.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Tecido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Tecido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Teste.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/TipoPagamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/TipoPagamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Adicional.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Adicional.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/ItemPedido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/ItemPedido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Medida.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Medida.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Modelo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Modelo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Orcamento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Orcamento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Peca.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Peca.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Pedido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Pedido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Situacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Situacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Tecido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Tecido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Teste.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/TipoPagamento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/TipoPagamento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,9 +87,19 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Raissa/IdeaProjects/Trabalho2/AtelierManager/Gerenciador_de_Atelie&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Raissa/Downloads/mysql-connector-java-8.0.17.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.13867188&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.498708&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Raissa\IdeaProjects\Trabalho2\AtelierManager\Gerenciador_de_Atelie\src\main\resources\com\company\atelier_manager" />
+      <recent name="C:\Users\Raissa\IdeaProjects\Trabalho2\AtelierManager\Gerenciador_de_Atelie\src\main\resources" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -82,5 +124,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,13 +1,23 @@
 package com.company.model;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
-
+@Entity
+@Table(name = "Orcamento")
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "tipo")
 public class Orcamento {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
     private Usuario usuario;
+    @ManyToOne
     private Cliente cliente;
     private Date dataCriacao;
+    @OneToMany
     private List<ItemPedido> itensPedido;
     private Double valorTotal;
     private String observacoes;
