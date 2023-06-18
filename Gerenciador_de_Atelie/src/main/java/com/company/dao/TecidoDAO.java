@@ -1,5 +1,6 @@
 package com.company.dao;
 
+import com.company.Controller.TecidoController;
 import com.company.model.Identificavel;
 import com.company.model.Tecido;
 import com.company.model.Usuario;
@@ -59,9 +60,11 @@ public class TecidoDAO extends GenericDAO<Tecido>{
 
     public static void main(String[] args) {
         TecidoDAO t = new TecidoDAO();
-                Tecido tec = new Tecido("couro", 5000.00);
+        TecidoController tc = new TecidoController();
+                Tecido tec = new Tecido(4l,"cooouro", 5000.00);
 
                 t.atualizar(tec);
+                t.deletar(tec);
         System.out.println(t.buscarTodosComFiltro("preco", "50"));
 
 

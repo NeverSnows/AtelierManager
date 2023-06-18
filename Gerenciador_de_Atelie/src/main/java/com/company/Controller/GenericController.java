@@ -8,14 +8,16 @@ public abstract class GenericController<T extends Identificavel>{
 
     protected abstract GenericDAO<T> getDAO();
 
+
     public void inserirOuEditar(T entidade){
-        GenericDAO<T> dao = getDAO();
+
         if (entidade.getId() == -1l) {
-            dao.inserir(entidade);
+            EntityManager.getEM().merge(entidade);
+            getDAO().inserir(entidade);
         } else {
-            T entidadeExistente = dao.buscarPorId(entidade.getId());
+            T entidadeExistente = getDAO().buscarPorId(entidade.getId());
             if (entidadeExistente != null) {
-                dao.atualizar(entidadeExistente);
+                getDAO().atualizar(entidadeExistente);
             } else {
                 throw new RuntimeException("Entidade não encontrada para atualização");
             }

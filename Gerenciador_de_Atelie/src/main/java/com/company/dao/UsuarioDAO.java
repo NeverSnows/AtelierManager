@@ -76,7 +76,7 @@ public class UsuarioDAO extends GenericDAO<Usuario>{
     public static void main(String[] args) {
         UsuarioDAO ud =new UsuarioDAO();
         Usuario usuario = new Usuario("raissinha", "emailok", "senha");
-        ud.inserir(usuario);
+        //ud.inserir(usuario);
 
         UsuarioController uc = new UsuarioController();
 

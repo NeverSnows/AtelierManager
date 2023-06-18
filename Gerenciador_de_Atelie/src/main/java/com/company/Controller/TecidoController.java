@@ -16,11 +16,8 @@ public class TecidoController extends GenericController<Tecido>{
 
 
     public static void main(String[] args) {
-        Tecido tecido = new Tecido("courino", 10.00);
+        Tecido tecido = new Tecido(5l,"courino", 10.00);
 
-        TecidoController tc = new TecidoController();
-
-        tc.inserirOuEditar(tecido);
     }
 
 }

@@ -1,2 +1,4 @@
-package com.company.Controller;public class PedidoController {
+package com.company.Controller;
+
+public class PedidoController {
 }

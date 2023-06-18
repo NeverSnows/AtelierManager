@@ -5,13 +5,15 @@ module com.example.gerenciador_de_atelie {
     requires org.hibernate.orm.core;
     requires java.naming;
     requires java.sql;
+    requires java.mail;
+
 
     opens com.company.atelier_manager to javafx.fxml;
     opens com.company.model to org.hibernate.orm.core;
+    opens com.company.model.Util to org.hibernate.orm.core;
 
     exports com.company.atelier_manager;
     exports com.company.dao to org.hibernate.orm.core;
     exports com.company.model to org.hibernate.orm.core;
-
 
 }
