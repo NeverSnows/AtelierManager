@@ -9,21 +9,21 @@ public class Adicional {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private Double multiplicador;
+    private Double valorAdicional;
     @ManyToOne
     private ItemPedido itemPedido;
     public Adicional(){}
 
-    public Adicional(String nome, Double multiplicador, ItemPedido itemPedido) {
+    public Adicional(String nome, Double valorAdicional, ItemPedido itemPedido) {
         setNome(nome);
-        setMultiplicador(multiplicador);
+        setValorAdicional(valorAdicional);
         setItemPedido(itemPedido);
     }
 
-    public Adicional(Long id, String nome, Double multiplicador, ItemPedido itemPedido) {
+    public Adicional(Long id, String nome, Double valorAdicional, ItemPedido itemPedido) {
         setId(id);
         setNome(nome);
-        setMultiplicador(multiplicador);
+        setValorAdicional(valorAdicional);
         setItemPedido(itemPedido);
     }
 
@@ -44,12 +44,12 @@ public class Adicional {
         this.nome = nome;
     }
 
-    public Double getMultiplicador() {
-        return multiplicador;
+    public Double getValorAdicional() {
+        return valorAdicional;
     }
 
-    public void setMultiplicador(Double multiplicador) {
-        this.multiplicador = multiplicador;
+    public void setValorAdicional(Double valorAdicional) {
+        this.valorAdicional = valorAdicional;
     }
     public ItemPedido getItemPedido() {
         return itemPedido;

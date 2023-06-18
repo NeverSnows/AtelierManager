@@ -1,14 +1,13 @@
 package com.company.dao;
 
 import com.company.Controller.UsuarioController;
-import com.company.model.Tecido;
+import com.company.model.Identificavel;
 import com.company.model.Usuario;
 import com.company.model.Util.CriptografiaDeSenha;
 
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 import java.util.List;
-import java.util.Objects;
 
 public class UsuarioDAO extends GenericDAO<Usuario>{
     @Override
@@ -47,12 +46,25 @@ public class UsuarioDAO extends GenericDAO<Usuario>{
 
     }
 
-    public Usuario retornarEmailESenha(String email, String senha) {
+    public Usuario retornarUsuarioPorEmailESenha(String email, String senha) {
         TypedQuery<Usuario> instrucaoSQL = EntityManager.getEM().createQuery(
                 "SELECT u FROM Usuario u WHERE u.emailUsuario = :email AND u.senhaUsuario = :senha",
                 Usuario.class);
         instrucaoSQL.setParameter("email", email);
         instrucaoSQL.setParameter("senha", senha);
+
+        try {
+            return instrucaoSQL.getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        }
+    }
+
+    public Usuario retornarUsuarioPorEmail(String email) {
+        TypedQuery<Usuario> instrucaoSQL = EntityManager.getEM().createQuery(
+                "SELECT u FROM Usuario u WHERE u.emailUsuario = :email",
+                Usuario.class);
+        instrucaoSQL.setParameter("email", email);
 
         try {
             return instrucaoSQL.getSingleResult();

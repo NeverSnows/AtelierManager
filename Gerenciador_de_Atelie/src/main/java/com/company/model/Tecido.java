@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Tecido")
-public class Tecido implements Identificavel {
+public class Tecido implements Identificavel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -14,6 +14,13 @@ public class Tecido implements Identificavel {
     public Tecido() {
     }
     public Tecido(String nome, Double preco) {
+        this.id = -1l;
+        this.nome = nome;
+        this.preco = preco;
+    }
+
+    public Tecido(Long id, String nome, Double preco) {
+        this.id = id;
         this.nome = nome;
         this.preco = preco;
     }

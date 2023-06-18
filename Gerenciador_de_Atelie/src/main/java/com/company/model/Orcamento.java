@@ -25,24 +25,31 @@ public class Orcamento {
     public Orcamento(){}
 
     public Orcamento(Usuario usuario, Cliente cliente, Date dataCriacao,
-                     List<ItemPedido> itensPedido, Double valorTotal, String observacoes) {
+                     List<ItemPedido> itensPedido, String observacoes) {
         this.usuario = usuario;
         this.cliente = cliente;
         this.dataCriacao = dataCriacao;
         this.itensPedido = itensPedido;
-        this.valorTotal = valorTotal;
         this.observacoes = observacoes;
+        atualizarPrecoTotal();
+
     }
 
     public Orcamento(Long id, Usuario usuario, Cliente cliente, Date dataCriacao,
-                     List<ItemPedido> itensPedido, Double valorTotal, String observacoes) {
+                     List<ItemPedido> itensPedido, String observacoes) {
         this.id = id;
         this.usuario = usuario;
         this.cliente = cliente;
         this.dataCriacao = dataCriacao;
         this.itensPedido = itensPedido;
-        this.valorTotal = valorTotal;
         this.observacoes = observacoes;
+        atualizarPrecoTotal();
+    }
+
+    private void atualizarPrecoTotal(){
+        valorTotal = 0.0;
+        for(ItemPedido itemPedido : itensPedido)
+            valorTotal += itemPedido.getValorItem();
     }
 
     public Long getId() {
@@ -78,11 +85,14 @@ public class Orcamento {
     }
 
     public List<ItemPedido> getItensPedido() {
+        atualizarPrecoTotal();
         return itensPedido;
     }
 
     public void setItensPedido(List<ItemPedido> itensPedido) {
         this.itensPedido = itensPedido;
+        atualizarPrecoTotal();
+
     }
 
     public Double getValorTotal() {

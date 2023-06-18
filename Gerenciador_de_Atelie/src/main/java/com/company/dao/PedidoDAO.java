@@ -1,12 +1,15 @@
 package com.company.dao;
 
+import com.company.model.Identificavel;
 import com.company.model.Pedido;
 import com.company.model.Tecido;
+import com.company.model.Usuario;
 
 import java.util.List;
 
 public class PedidoDAO extends GenericDAO{
-    @Override
+
+
     public Object buscarPorId(Long id) {
         try {
             return EntityManager.getEM().find(Pedido.class, id);

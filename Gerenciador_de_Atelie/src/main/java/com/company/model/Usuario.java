@@ -5,17 +5,28 @@ import java.io.Serializable;
 
 
 @Entity
-@Table(name = "Usuario")
+@Table(name = "Usuario", uniqueConstraints = @UniqueConstraint(columnNames = {"emailUsuario"}))
 public class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
+
+    @Column(name = "nomeUsuario")
     private String nomeUsuario;
+    @Column(name = "emailUsuario")
     private String emailUsuario;
+    @Column(name = "senhaUsuario")
     private String senhaUsuario;
 
     public Usuario(){}
+
+    public Usuario(Long id, String nomeUsuario, String emailUsuario, String senhaUsuario) {
+        this.id = id;
+        this.nomeUsuario = nomeUsuario;
+        this.emailUsuario = emailUsuario;
+        this.senhaUsuario = senhaUsuario;
+    }
     public Usuario(String nomeUsuario, String emailUsuario, String senhaUsuario) {
         this.nomeUsuario = nomeUsuario;
         this.emailUsuario = emailUsuario;

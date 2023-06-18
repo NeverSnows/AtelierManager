@@ -58,6 +58,15 @@ public class ItemPedido {
         this.valorItem = valorItem;
     }
 
+    public void atualizarPrecoTotal(){
+        valorItem = 0.0;
+        valorItem += peca.getPrecoBase() + tecido.getPreco();
+        for(Adicional adicional : adicionais)
+            valorItem += adicional.getValorAdicional();
+
+        valorItem *= tamanho.getMultiplicador();
+    }
+
     public Long getId() {
         return id;
     }
@@ -72,6 +81,7 @@ public class ItemPedido {
 
     public void setPeca(Peca peca) {
         this.peca = peca;
+        atualizarPrecoTotal();
     }
 
     public Tamanho getTamanho() {
@@ -80,6 +90,7 @@ public class ItemPedido {
 
     public void setTamanho(Tamanho tamanho) {
         this.tamanho = tamanho;
+        atualizarPrecoTotal();
     }
 
     public Tecido getTecido() {
@@ -88,14 +99,17 @@ public class ItemPedido {
 
     public void setTecido(Tecido tecido) {
         this.tecido = tecido;
+        atualizarPrecoTotal();
     }
 
     public List<Adicional> getAdicionais() {
+        atualizarPrecoTotal();
         return adicionais;
     }
 
     public void setAdicionais(List<Adicional> adicionais) {
         this.adicionais = adicionais;
+        atualizarPrecoTotal();
     }
 
     public Double getValorItem() {

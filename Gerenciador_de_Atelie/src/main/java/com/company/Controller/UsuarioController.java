@@ -4,14 +4,12 @@ import com.company.dao.UsuarioDAO;
 import com.company.model.Usuario;
 import com.company.model.Util.CriptografiaDeSenha;
 
-import java.util.List;
-
 public class UsuarioController {
 
     public boolean verificarCredenciais(String email, String senha) {
         UsuarioDAO ud = new UsuarioDAO();
         String senhaCriptografada = CriptografiaDeSenha.encriptaSenha(senha);
-        Usuario usuario = ud.retornarEmailESenha(email, senhaCriptografada);
+        Usuario usuario = ud.retornarUsuarioPorEmailESenha(email, senhaCriptografada);
 
         if (usuario != null && usuario.getEmailUsuario().equals(email) && usuario.getSenhaUsuario().equals(senhaCriptografada)) {
             return true;

@@ -7,18 +7,18 @@ import java.security.NoSuchAlgorithmException;
 public class CriptografiaDeSenha {
     public static String encriptaSenha(String password) {
         try {
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            byte[] encodedHash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] hashCodificado = md.digest(password.getBytes(StandardCharsets.UTF_8));
 
-            StringBuilder hexString = new StringBuilder();
-            for (byte b : encodedHash) {
+            StringBuilder stringHexadecimal = new StringBuilder();
+            for (byte b : hashCodificado) {
                 String hex = Integer.toHexString(0xff & b);
                 if (hex.length() == 1)
-                    hexString.append('0');
-                hexString.append(hex);
+                    stringHexadecimal.append('0');
+                stringHexadecimal.append(hex);
             }
 
-            return hexString.toString();
+            return stringHexadecimal.toString();
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }

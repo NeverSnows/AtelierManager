@@ -35,7 +35,7 @@ public class Pedido extends Orcamento{
     public Pedido(Usuario usuario, Cliente cliente, Date dataCriacao, List<ItemPedido> itensPedido,
                   Double valorTotal, String observacoes, Long id, Date dataEntrega, Boolean pago, Date dataPagamento,
                   TipoPagamento tipoPagamento, Situacao situacao) {
-        super(usuario, cliente, dataCriacao, itensPedido, valorTotal, observacoes);
+       // super(super.getUsuario(), cliente, dataCriacao, itensPedido, valorTotal, observacoes);
         this.id = id;
         this.dataEntrega = dataEntrega;
         this.pago = pago;
@@ -47,7 +47,7 @@ public class Pedido extends Orcamento{
     public Pedido(Long id, Usuario usuario, Cliente cliente, Date dataCriacao, List<ItemPedido> itensPedido,
                   Double valorTotal, String observacoes, Long id1, Date dataEntrega, Boolean pago, Date dataPagamento,
                   TipoPagamento tipoPagamento, Situacao situacao) {
-        super(id, usuario, cliente, dataCriacao, itensPedido, valorTotal, observacoes);
+       // super(id, usuario, cliente, dataCriacao, itensPedido, valorTotal, observacoes);
         this.id = id1;
         this.dataEntrega = dataEntrega;
         this.pago = pago;

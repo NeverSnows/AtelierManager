@@ -1,11 +1,40 @@
 package com.company.dao;
 
+import com.company.model.Identificavel;
 import com.company.model.Tecido;
+import com.company.model.Usuario;
 
 import javax.persistence.TypedQuery;
 import java.util.List;
 
 public class TecidoDAO extends GenericDAO<Tecido>{
+
+
+/*
+    public void atualizar(Tecido tecido) {
+        try {
+            EntityManager.getEM().getTransaction().begin();
+            Tecido entidadeExistente = EntityManager.getEM().find(tecido.getClass(), tecido.getId());
+            if (entidadeExistente != null) {
+                // Copiar os valores da entidade passada como argumento para a entidade existente
+                entidadeExistente.setNome(tecido.getNome());
+                entidadeExistente.setPreco(tecido.getPreco());
+                // Copie os outros atributos da entidade conforme necessário
+
+                EntityManager.getEM().merge(entidadeExistente);
+            } else {
+                throw new RuntimeException("Entidade não encontrada para atualização");
+            }
+
+            EntityManager.getEM().getTransaction().commit();
+
+        } catch (Exception e) {
+            EntityManager.getEM().getTransaction().rollback();
+            throw new RuntimeException("Erro ao atualizar a entidade: " + e.getMessage(), e);
+        }
+    }
+*/
+
     @Override
     public Tecido buscarPorId(Long id) {
         try {
@@ -30,9 +59,11 @@ public class TecidoDAO extends GenericDAO<Tecido>{
 
     public static void main(String[] args) {
         TecidoDAO t = new TecidoDAO();
-                Tecido tec = new Tecido("couro", 500.00);
+                Tecido tec = new Tecido("couro", 5000.00);
 
+                t.atualizar(tec);
         System.out.println(t.buscarTodosComFiltro("preco", "50"));
+
 
     }
 }

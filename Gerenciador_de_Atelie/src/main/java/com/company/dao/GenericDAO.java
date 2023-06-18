@@ -1,6 +1,7 @@
 package com.company.dao;
 
 import com.company.model.Identificavel;
+import com.company.model.Usuario;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public abstract class GenericDAO<T> {
         }
     }
 
-    public void atualizar(T entidade) {
+    public <Object extends Identificavel> void atualizar(Object entidade) {
         try {
             EntityManager.getEM().getTransaction().begin();
             EntityManager.getEM().merge(entidade);
@@ -48,8 +49,11 @@ public abstract class GenericDAO<T> {
         }
     }
 
-   public abstract T buscarPorId(Long id);
+
+    public abstract T buscarPorId(Long id);
 
     public abstract List<T> buscarTodos();
     public abstract List<?> buscarTodosComFiltro(String atributo, String valor);
+
+
 }
