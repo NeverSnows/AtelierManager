@@ -49,6 +49,7 @@ public class AtelieManagerApplication extends Application {
         mainScene = new Scene(mainFxmlLoader.load());
         signInScene = new Scene(signInFxmlLoader.load());
         loginScene = new Scene(logInFxmlLoader.load());
+
         newModelScene = new Scene(newModelFxmlLoader.load());
         newPieceScene = new Scene(newPieceFxmlLoader.load());
         newFabricScene = new Scene(newFabricFxmlLoader.load());

@@ -100,4 +100,25 @@ public class DatabaseManager {
         fabrics.add(new Fabric("Ceda", 1.13));
         return fabrics;
     }
+
+    //Metodos de deletar
+    public static void deleteEstimate(Estimate estimate){
+
+    }
+    public static void deleteOrder(Order order){
+
+    }
+    public static void deleteModel(Model model){
+
+    }
+    public static void deletePiece(Piece piece){
+
+    }
+    public static void deleteCustomer(Customer customer){
+
+    }
+    public static void deleteFabric(Fabric fabric){
+
+    }
+
 }

@@ -49,6 +49,8 @@
                             <TableColumn prefWidth="75.0" text="C2" />
                           </columns>
                         </TableView>
+                        <Button layoutX="14.0" layoutY="473.0" mnemonicParsing="false" text="Button" />
+                        <Button layoutX="424.0" layoutY="473.0" mnemonicParsing="false" text="Button" />
                      </children>
                   </AnchorPane>
               </content>
@@ -81,7 +83,7 @@
                           </columns>
                         </TableView>
                         <Button fx:id="newPieceBtn" layoutX="815.0" layoutY="473.0" mnemonicParsing="false" onAction="#newPiece" text="New Piece" />
-                        <Button fx:id="viewAndEditPieceBtn" layoutX="383.0" layoutY="473.0" mnemonicParsing="false" onAction="#deletePiece" text="View and Edit selected" />
+                        <Button fx:id="viewAndEditPieceBtn" layoutX="383.0" layoutY="473.0" mnemonicParsing="false" onAction="#viewPiece" text="View and Edit selected" />
                         <Button fx:id="deletePieceBtn" layoutX="14.0" layoutY="473.0" mnemonicParsing="false" onAction="#deletePiece" text="Delete selected" />
                      </children>
                   </AnchorPane>

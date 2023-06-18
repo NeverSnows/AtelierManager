@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.atelier_manager.MainController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.atelier_manager.view_controllers.MainController">
    <children>
       <Pane prefHeight="59.0" prefWidth="900.0" style="-fx-background-color: lightblue;">
          <children>
@@ -33,6 +33,8 @@
                           </columns>
                         </TableView>
                         <Button fx:id="newEstimateBtn" layoutX="797.0" layoutY="473.0" mnemonicParsing="false" onAction="#newEstimate" text="New Estimate" />
+                        <Button fx:id="viewAndEditEstimateBtn" layoutX="383.0" layoutY="473.0" mnemonicParsing="false" onAction="#viewEstimate" text="View and Edit selected" />
+                        <Button fx:id="deleteEstimateBtn" layoutX="14.0" layoutY="473.0" mnemonicParsing="false" onAction="#deleteEstimate" text="Delete selected" />
                      </children>
                   </AnchorPane>
               </content>
@@ -47,6 +49,8 @@
                             <TableColumn prefWidth="75.0" text="C2" />
                           </columns>
                         </TableView>
+                        <Button layoutX="14.0" layoutY="473.0" mnemonicParsing="false" text="Button" />
+                        <Button layoutX="424.0" layoutY="473.0" mnemonicParsing="false" text="Button" />
                      </children>
                   </AnchorPane>
               </content>
@@ -62,6 +66,8 @@
                           </columns>
                         </TableView>
                         <Button fx:id="newModelBtn" layoutX="808.0" layoutY="473.0" mnemonicParsing="false" onAction="#newModel" text="New Model" />
+                        <Button fx:id="viewAndEditModelBtn" layoutX="383.0" layoutY="473.0" mnemonicParsing="false" onAction="#viewModelBtn" text="View and Edit selected" />
+                        <Button fx:id="deleteModelBtn" layoutX="14.0" layoutY="473.0" mnemonicParsing="false" onAction="#deleteModel" text="Delete selected" />
                      </children>
                   </AnchorPane>
               </content>
@@ -77,6 +83,8 @@
                           </columns>
                         </TableView>
                         <Button fx:id="newPieceBtn" layoutX="815.0" layoutY="473.0" mnemonicParsing="false" onAction="#newPiece" text="New Piece" />
+                        <Button fx:id="viewAndEditPieceBtn" layoutX="383.0" layoutY="473.0" mnemonicParsing="false" onAction="#viewPiece" text="View and Edit selected" />
+                        <Button fx:id="deletePieceBtn" layoutX="14.0" layoutY="473.0" mnemonicParsing="false" onAction="#deletePiece" text="Delete selected" />
                      </children>
                   </AnchorPane>
               </content>
@@ -93,7 +101,8 @@
                           </columns>
                         </TableView>
                         <Button fx:id="registerCustomerBtn" layoutX="772.0" layoutY="473.0" mnemonicParsing="false" onAction="#registerCustomer" text="Register Customer" />
-                        <Button layoutX="414.0" layoutY="473.0" mnemonicParsing="false" text="Check Info" />
+                        <Button fx:id="viewAndEditCustomerBtn" layoutX="383.0" layoutY="473.0" mnemonicParsing="false" onAction="#viewCustomer" text="View and Edit selected" />
+                        <Button fx:id="deleteCustomerBtn" layoutX="14.0" layoutY="473.0" mnemonicParsing="false" onAction="#deleteCustomer" text="Delete selected" />
                      </children>
                   </AnchorPane>
               </content>
@@ -109,6 +118,8 @@
                           </columns>
                         </TableView>
                         <Button fx:id="newFabricBtn" layoutX="811.0" layoutY="473.0" mnemonicParsing="false" onAction="#newFabric" text="New Fabric" />
+                        <Button fx:id="viewAndEditFabricBtn" layoutX="383.0" layoutY="473.0" mnemonicParsing="false" onAction="#viewFabric" text="View and Edit seelcted" />
+                        <Button fx:id="deleteFabricBtn" layoutX="14.0" layoutY="473.0" mnemonicParsing="false" onAction="#deleteFabric" text="Delete selected" />
                      </children>
                   </AnchorPane>
               </content>

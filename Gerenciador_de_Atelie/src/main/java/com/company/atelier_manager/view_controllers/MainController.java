@@ -7,17 +7,17 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import java.util.List;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
+    //Deprecate and should not be used
     private List<Estimate> currentEstimates;
     private List<Order> currentOrders;
     private List<Model> currentModels;
@@ -50,7 +50,7 @@ public class MainController implements Initializable {
     @FXML
     private Button newEstimateBtn;
 
-    private ObservableList<Estimate> observableEstimate;
+    public ObservableList<Estimate> observableEstimate;
     //endregion
 
     //region Orders
@@ -74,7 +74,7 @@ public class MainController implements Initializable {
     @FXML
     private Button newModelBtn;
 
-    private ObservableList<Model> observableModels;
+    public ObservableList<Model> observableModels;
     //endregion
 
     //region Pieces
@@ -93,7 +93,7 @@ public class MainController implements Initializable {
     @FXML
     private Button newPieceBtn;
 
-    private ObservableList<Piece> observablePieces;
+    public ObservableList<Piece> observablePieces;
     //endregion
 
     //region Customers
@@ -115,7 +115,7 @@ public class MainController implements Initializable {
     @FXML
     private Button registerCustomerBtn;
 
-    private ObservableList<Customer> observableCustomers;
+    public ObservableList<Customer> observableCustomers;
 
     //endregion
 
@@ -135,33 +135,73 @@ public class MainController implements Initializable {
     @FXML
     private Button newFabricBtn;
 
-    private ObservableList<Fabric> observableFabrics;
+    public ObservableList<Fabric> observableFabrics;
     //endregion
 
     //region Delete Methods
     @FXML
     void deleteCustomer(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete Customer?");
+        alert.setContentText("Are you sure you want to delete this customer?\nThis action is irreversible!");
+        Optional<ButtonType> result = alert.showAndWait();
 
+        if(result.get() == ButtonType.OK){
+            DatabaseManager.deleteCustomer(customersTable.getSelectionModel().getSelectedItem());
+            observableCustomers.remove(customersTable.getSelectionModel().getSelectedItem());
+        }
     }
 
     @FXML
     void deleteEstimate(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete Estimate?");
+        alert.setContentText("Are you sure you want to delete this estimate?\nThis action is irreversible!");
+        Optional<ButtonType> result = alert.showAndWait();
 
+        if(result.get() == ButtonType.OK) {
+            DatabaseManager.deleteEstimate(estimateTable.getSelectionModel().getSelectedItem());
+            observableEstimate.remove(estimateTable.getSelectionModel().getSelectedItem());
+        }
     }
 
     @FXML
     void deleteFabric(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete Fabric?");
+        alert.setContentText("Are you sure you want to delete this fabric?\nThis action is irreversible!");
+        Optional<ButtonType> result = alert.showAndWait();
 
+        if(result.get() == ButtonType.OK) {
+            DatabaseManager.deleteFabric(fabricsTable.getSelectionModel().getSelectedItem());
+            observableFabrics.remove(fabricsTable.getSelectionModel().getSelectedItem());
+        }
     }
 
     @FXML
-    void deleteModel(ActionEvent event) {
+    void deleteModel(ActionEvent event){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete Model?");
+        alert.setContentText("Are you sure you want to delete this model?\nThis action is irreversible!");
+        Optional<ButtonType> result = alert.showAndWait();
 
+        if (result.get() == ButtonType.OK) {
+            DatabaseManager.deleteModel(modelsTable.getSelectionModel().getSelectedItem());
+            observableModels.remove(modelsTable.getSelectionModel().getSelectedItem());
+        }
     }
 
     @FXML
     void deletePiece(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete Piece?");
+        alert.setContentText("Are you sure you want to delete this piece?\nThis action is irreversible!");
+        Optional<ButtonType> result = alert.showAndWait();
 
+        if (result.get() == ButtonType.OK) {
+            DatabaseManager.deletePiece(piecesTable.getSelectionModel().getSelectedItem());
+            observablePieces.remove(piecesTable.getSelectionModel().getSelectedItem());
+        }
     }
     //endregion
 
