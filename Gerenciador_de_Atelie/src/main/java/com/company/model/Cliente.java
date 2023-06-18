@@ -14,6 +14,23 @@ public class Cliente{
     @OneToMany(mappedBy = "cliente")
     private List<MedidaCliente> medidas; // medidas do cliente
 
+    public Cliente() {
+    }
+
+    public Cliente(String nome, String telefone, String email, List<MedidaCliente> medidas) {
+        this.nome = nome;
+        this.telefone = telefone;
+        this.email = email;
+        this.medidas = medidas;
+    }
+    public Cliente(Long id, String nome, String telefone, String email, List<MedidaCliente> medidas) {
+        this.id = id;
+        this.nome = nome;
+        this.telefone = telefone;
+        this.email = email;
+        this.medidas = medidas;
+    }
+
     public Long getId() {
         return id;
     }

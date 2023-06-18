@@ -4,6 +4,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
+
 @Entity
 @Table(name = "Pedido")
 public class Pedido extends Orcamento{
@@ -26,6 +28,33 @@ public class Pedido extends Orcamento{
     @Enumerated(EnumType.STRING)
     @Column(name = "situacao")
     private Situacao situacao;
+
+    public Pedido() {
+    }
+
+    public Pedido(Usuario usuario, Cliente cliente, Date dataCriacao, List<ItemPedido> itensPedido,
+                  Double valorTotal, String observacoes, Long id, Date dataEntrega, Boolean pago, Date dataPagamento,
+                  TipoPagamento tipoPagamento, Situacao situacao) {
+        super(usuario, cliente, dataCriacao, itensPedido, valorTotal, observacoes);
+        this.id = id;
+        this.dataEntrega = dataEntrega;
+        this.pago = pago;
+        this.dataPagamento = dataPagamento;
+        this.tipoPagamento = tipoPagamento;
+        this.situacao = situacao;
+    }
+
+    public Pedido(Long id, Usuario usuario, Cliente cliente, Date dataCriacao, List<ItemPedido> itensPedido,
+                  Double valorTotal, String observacoes, Long id1, Date dataEntrega, Boolean pago, Date dataPagamento,
+                  TipoPagamento tipoPagamento, Situacao situacao) {
+        super(id, usuario, cliente, dataCriacao, itensPedido, valorTotal, observacoes);
+        this.id = id1;
+        this.dataEntrega = dataEntrega;
+        this.pago = pago;
+        this.dataPagamento = dataPagamento;
+        this.tipoPagamento = tipoPagamento;
+        this.situacao = situacao;
+    }
 
 
     public Date getDataEntrega() {

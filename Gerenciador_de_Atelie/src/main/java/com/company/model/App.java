@@ -10,7 +10,7 @@ import javax.persistence.Persistence;
 
 public class App {
     public static void main(String[] args) throws Exception{
-        /* try {
+         try {
 
             EntityManager.getEM().getTransaction().begin();
 
@@ -27,6 +27,6 @@ public class App {
             e.printStackTrace();
         }
 
-             */
+
     }
 }

@@ -34,6 +34,30 @@ public class ItemPedido {
     @Column(name = "valorItem")
     private Double valorItem;
 
+    public ItemPedido() {
+    }
+    public ItemPedido(Peca peca, Tamanho tamanho, Tecido tecido, String cor,
+                      List<Adicional> adicionais, Orcamento orcamento, Double valorItem) {
+        this.peca = peca;
+        this.tamanho = tamanho;
+        this.tecido = tecido;
+        this.cor = cor;
+        this.adicionais = adicionais;
+        this.orcamento = orcamento;
+        this.valorItem = valorItem;
+    }
+    public ItemPedido(Long id, Peca peca, Tamanho tamanho, Tecido tecido, String cor,
+                      List<Adicional> adicionais, Orcamento orcamento, Double valorItem) {
+        this.id = id;
+        this.peca = peca;
+        this.tamanho = tamanho;
+        this.tecido = tecido;
+        this.cor = cor;
+        this.adicionais = adicionais;
+        this.orcamento = orcamento;
+        this.valorItem = valorItem;
+    }
+
     public Long getId() {
         return id;
     }

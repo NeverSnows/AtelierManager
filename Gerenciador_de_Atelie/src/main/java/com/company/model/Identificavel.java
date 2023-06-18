@@ -1,4 +1,4 @@
-package com.company.dao;
+package com.company.model;
 
 public interface Identificavel {
     Long getId();

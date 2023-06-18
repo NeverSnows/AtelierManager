@@ -19,6 +19,25 @@ public class Peca {
     @OneToMany(mappedBy = "peca")
     private List<ItemPedido> itensPedido;
 
+    public Peca(){}
+    public Peca(String name, Double precoBase, List<MedidaPeca> medidas,
+                Modelo modelo, List<ItemPedido> itensPedido) {
+        this.name = name;
+        this.precoBase = precoBase;
+        this.medidas = medidas;
+        this.modelo = modelo;
+        this.itensPedido = itensPedido;
+    }
+    public Peca(Long id, String name, Double precoBase, List<MedidaPeca> medidas,
+                Modelo modelo, List<ItemPedido> itensPedido) {
+        this.id = id;
+        this.name = name;
+        this.precoBase = precoBase;
+        this.medidas = medidas;
+        this.modelo = modelo;
+        this.itensPedido = itensPedido;
+    }
+
     public Long getId() {
         return id;
     }

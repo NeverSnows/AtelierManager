@@ -10,4 +10,15 @@ public class Modelo {
     private Long id;
     private String nome;
     private Double multiplicador;
+
+    public Modelo() {}
+    public Modelo( String nome, Double multiplicador) {
+        this.nome = nome;
+        this.multiplicador = multiplicador;
+    }
+    public Modelo(Long id, String nome, Double multiplicador) {
+        this.id = id;
+        this.nome = nome;
+        this.multiplicador = multiplicador;
+    }
 }

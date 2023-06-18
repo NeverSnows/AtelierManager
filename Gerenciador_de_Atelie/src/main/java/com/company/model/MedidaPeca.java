@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "MedidaPeca")
-public class MedidaPeca extends Medida {
+public class MedidaPeca extends Medida{
     @ManyToOne
     @JoinColumn(name = "peca_id")
     private Peca peca;

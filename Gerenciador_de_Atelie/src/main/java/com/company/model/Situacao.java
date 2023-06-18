@@ -1,7 +1,10 @@
 package com.company.model;
 
 public enum Situacao {
-    PENDENTE,
-    EM_ANDAMENTO,
-    CONCLUIDO
+    CRIADO,
+    EM_PRODUCAO,
+    PAGO,
+    ENTREGUE,
+    EM_AJUSTE,
+    FINALIZADO
 }

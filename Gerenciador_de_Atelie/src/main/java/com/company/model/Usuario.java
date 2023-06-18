@@ -64,4 +64,6 @@ public class Usuario implements Serializable {
                 ", senhaUsuario='" + senhaUsuario + '\'' +
                 '}';
     }
+
+
 }

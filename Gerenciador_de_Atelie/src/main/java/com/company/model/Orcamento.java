@@ -22,6 +22,29 @@ public class Orcamento {
     private Double valorTotal;
     private String observacoes;
 
+    public Orcamento(){}
+
+    public Orcamento(Usuario usuario, Cliente cliente, Date dataCriacao,
+                     List<ItemPedido> itensPedido, Double valorTotal, String observacoes) {
+        this.usuario = usuario;
+        this.cliente = cliente;
+        this.dataCriacao = dataCriacao;
+        this.itensPedido = itensPedido;
+        this.valorTotal = valorTotal;
+        this.observacoes = observacoes;
+    }
+
+    public Orcamento(Long id, Usuario usuario, Cliente cliente, Date dataCriacao,
+                     List<ItemPedido> itensPedido, Double valorTotal, String observacoes) {
+        this.id = id;
+        this.usuario = usuario;
+        this.cliente = cliente;
+        this.dataCriacao = dataCriacao;
+        this.itensPedido = itensPedido;
+        this.valorTotal = valorTotal;
+        this.observacoes = observacoes;
+    }
+
     public Long getId() {
         return id;
     }

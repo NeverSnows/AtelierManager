@@ -11,7 +11,7 @@ module com.example.gerenciador_de_atelie {
 
     exports com.company.atelier_manager;
     exports com.company.dao to org.hibernate.orm.core;
-
+    exports com.company.model to org.hibernate.orm.core;
 
 
 }

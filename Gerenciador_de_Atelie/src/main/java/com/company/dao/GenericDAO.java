@@ -1,6 +1,6 @@
 package com.company.dao;
 
-import com.company.model.Tecido;
+import com.company.model.Identificavel;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ public abstract class GenericDAO<T> {
         EntityManager.getEMF().close();
     }
     public void inserir(T entidade){
+
         try {
             EntityManager.getEM().getTransaction().begin();
             EntityManager.getEM().persist(entidade);
@@ -22,28 +23,27 @@ public abstract class GenericDAO<T> {
 
     public void atualizar(T entidade) {
         try {
-            EntityManager.getEM().getTransaction().begin(); // Inicia a transação
-            EntityManager.getEM().merge(entidade); // Realiza a operação de atualização
-            EntityManager.getEM().getTransaction().commit(); // Confirma a transação
+            EntityManager.getEM().getTransaction().begin();
+            EntityManager.getEM().merge(entidade);
+            EntityManager.getEM().getTransaction().commit();
         } catch (Exception e) {
-            EntityManager.getEM().getTransaction().rollback(); // Rollback da transação em caso de exceção
+            EntityManager.getEM().getTransaction().rollback();
             throw new RuntimeException("Erro ao atualizar a entidade: " + e.getMessage(), e);
         }
     }
 
     <T extends Identificavel> void deletar(T entidade){
         try {
-            EntityManager.getEM().getTransaction().begin(); // Inicia a transação
+            EntityManager.getEM().getTransaction().begin();
 
             if (!EntityManager.getEM().contains(entidade)) {
-                // Se a entidade não estiver gerenciada, carrega-a do banco de dados
                 entidade = (T) EntityManager.getEM().find(entidade.getClass(), entidade.getId());
             }
 
-            EntityManager.getEM().remove(entidade); // Realiza a operação de inserção
-            EntityManager.getEM().getTransaction().commit(); // Confirma a transação
+            EntityManager.getEM().remove(entidade);
+            EntityManager.getEM().getTransaction().commit();
         } catch (Exception e) {
-            EntityManager.getEM().getTransaction().rollback(); // Rollback da transação em caso de exceção
+            EntityManager.getEM().getTransaction().rollback();
             throw new RuntimeException("Erro ao deletar a entidade: " + e.getMessage(), e);
         }
     }

@@ -1,7 +1,5 @@
 package com.company.model;
 
-import com.company.dao.Identificavel;
-
 import javax.persistence.*;
 
 @Entity
