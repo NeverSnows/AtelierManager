@@ -106,5 +106,7 @@ public class ItemPedido {
         this.valorItem = valorItem;
     }
 
-    //public Double calculaValorItem(Peca peca, Tecido tecido, )
+    public Double calculaValorItem(){
+       return this.peca.getPrecoBase() + this.tecido.getPreco() ;
+    }
 }
