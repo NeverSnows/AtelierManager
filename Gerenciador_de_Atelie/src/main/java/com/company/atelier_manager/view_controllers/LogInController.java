@@ -1,5 +1,8 @@
-package com.company.atelier_manager;
+package com.company.atelier_manager.view_controllers;
 
+import com.company.atelier_manager.AtelieManagerApplication;
+import com.company.atelier_manager.DatabaseManager;
+import com.company.atelier_manager.structure.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -22,16 +25,22 @@ public class LogInController {
 
     @FXML
     void checkInInfo(ActionEvent event) {
-        System.out.println(event.getEventType());
-        System.out.println("Email: " + emailTextField.getText() + "\nPassword: " + passwordField.getText());
+        String email = emailTextField.getText();
+        String password = passwordField.getText();
+        User user = new User("", email, password);
 
-        if(DatabaseManager.validateUser(emailTextField.getText(), passwordField.getText())){
+        if(!email.isBlank() && !password.isBlank() && DatabaseManager.validateUser(user)){
             AtelieManagerApplication.swapToMain();
+            resetFields();
         }
     }
     @FXML
     void swapToSignIn(ActionEvent event) {
         AtelieManagerApplication.swapToSignIn();
+        resetFields();
     }
-
+    public void resetFields(){
+        emailTextField.setText("");
+        passwordField.setText("");
+    }
 }

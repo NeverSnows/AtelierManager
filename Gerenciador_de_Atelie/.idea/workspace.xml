@@ -5,18 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8fe37a1-ad24-452e-800d-71fd31deb106" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/Estimate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/ExtraRequirement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/Fabric.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/Measure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/Model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/OrderItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/Piece.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/enums/OrderStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/enums/PaymentOption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/enums/Size.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/NewFabricController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/NewModelController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/NewPieceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/RegisterCustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/SignInController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/ViewFabricController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/new_estimate-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/new_fabric-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/new_model-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/new_piece-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/register_customer-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/view_fabric-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Controller/CodigosVerificacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/CodigosVerificacaoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/CodigosVerificacaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/CodigosVerificacaoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/UsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Util/CodigosVerificacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Util/CodigosVerificacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/AtelieManagerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/AtelieManagerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/SignInController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Controller/CodigosVerificacaoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Controller/CodigosVerificacaoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Controller/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Controller/UsuarioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/CodigosVerificacaoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/CodigosVerificacaoDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/UsuarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Util/CodigosVerificacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Util/CodigosVerificacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/main-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/sign_in-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/sign_in-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,20 +80,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Raissa/Downloads/mysql-connector-java-8.0.17.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.13867188&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.498708&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Raissa/IdeaProjects/Trabalho2/AtelierManager/Gerenciador_de_Atelie/src/main/resources/com/company/atelier_manager",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.13867188",
+    "project.structure.side.proportion": "0.498708",
+    "settings.editor.selected.configurable": "configurable.group.appearance"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Raissa\IdeaProjects\Trabalho2\AtelierManager\Gerenciador_de_Atelie\src\main\resources\com\company\atelier_manager" />
+      <recent name="C:\Users\Raissa\IdeaProjects\Trabalho2\AtelierManager\Gerenciador_de_Atelie\src\main\java\com\company\atelier_manager" />
+      <recent name="C:\Users\Raissa\IdeaProjects\Trabalho2\AtelierManager\Gerenciador_de_Atelie\src\main\java\com\company" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Raissa\IdeaProjects\Trabalho2\AtelierManager\Gerenciador_de_Atelie\src\main\resources\com\company\atelier_manager" />
       <recent name="C:\Users\Raissa\IdeaProjects\Trabalho2\AtelierManager\Gerenciador_de_Atelie\src\main\resources" />

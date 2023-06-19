@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.atelier_manager.SignInController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.atelier_manager.view_controllers.SignInController">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="85.0" prefWidth="200.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="500.0" prefWidth="500.0" />
@@ -28,8 +28,7 @@
                <font>
                   <Font name="Arial" size="16.0" />
                </font></Label>
-            <Label layoutX="20.0" layoutY="428.0" styleClass="user-prompt-text" text="Already have an account?" />
-            <Button fx:id="logInBtn" layoutX="20.0" layoutY="456.0" mnemonicParsing="false" onAction="#swapToLogin" styleClass="user-prompt-text" text="Log in" />
+            <Button fx:id="logInBtn" layoutX="14.0" layoutY="456.0" mnemonicParsing="false" onAction="#swapToLogin" styleClass="user-prompt-text" text="Cancel" />
             <Button fx:id="createAccountBtn" layoutX="369.0" layoutY="456.0" mnemonicParsing="false" onAction="#createAccount" styleClass="user-prompt-text" text="Create account" />
             <GridPane layoutX="20.0" layoutY="150.0" prefHeight="150.0" prefWidth="460.0" styleClass="info-container">
               <columnConstraints>
