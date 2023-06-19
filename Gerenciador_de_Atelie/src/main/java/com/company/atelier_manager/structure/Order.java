@@ -3,27 +3,27 @@ package com.company.atelier_manager.structure;
 import com.company.atelier_manager.structure.enums.OrderStatus;
 import com.company.atelier_manager.structure.enums.PaymentOption;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Order extends Estimate{
 
     private final long orderId;
-    private LocalDate deliveryDate;
+    private Date paymentDate;
     private boolean paidOut;
     private PaymentOption paymentOption;
     private OrderStatus orderStatus;
-    public Order(Estimate estimate, long orderId, LocalDate deliveryDate, boolean paidOut, PaymentOption paymentOption, OrderStatus orderStatus) {
+    public Order(Estimate estimate, long orderId, Date paymentDate, boolean paidOut, PaymentOption paymentOption, OrderStatus orderStatus) {
         super(estimate.getId(), estimate.getUser(), estimate.getCustomer(), estimate.getDate(), estimate.getOrderItems(), estimate.getTotalPrice(), estimate.getObservations());
-        this.deliveryDate = deliveryDate;
+        this.paymentDate = paymentDate;
         this.paidOut = paidOut;
         this.paymentOption = paymentOption;
         this.orderStatus = orderStatus;
         this.orderId = orderId;
     }
 
-    public Order(Estimate estimate, LocalDate deliveryDate, boolean paidOut, PaymentOption paymentOption, OrderStatus orderStatus) {
+    public Order(Estimate estimate, Date paymentDate, boolean paidOut, PaymentOption paymentOption, OrderStatus orderStatus) {
         super(estimate.getId(), estimate.getUser(), estimate.getCustomer(), estimate.getDate(), estimate.getOrderItems(), estimate.getTotalPrice(), estimate.getObservations());
-        this.deliveryDate = deliveryDate;
+        this.paymentDate = paymentDate;
         this.paidOut = paidOut;
         this.paymentOption = paymentOption;
         this.orderStatus = orderStatus;
@@ -40,12 +40,12 @@ public class Order extends Estimate{
         return orderId;
     }
 
-    public LocalDate getDeliveryDate() {
-        return deliveryDate;
+    public Date getPaymentDate() {
+        return paymentDate;
     }
 
-    public void setDeliveryDate(LocalDate deliveryDate) {
-        this.deliveryDate = deliveryDate;
+    public void setPaymentDate(Date paymentDate) {
+        this.paymentDate = paymentDate;
     }
 
     public boolean isPaidOut() {

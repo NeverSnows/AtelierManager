@@ -14,7 +14,7 @@
       <Pane prefHeight="59.0" prefWidth="900.0" style="-fx-background-color: lightblue;">
          <children>
             <Button fx:id="logOutBtn" layoutX="818.0" layoutY="17.0" mnemonicParsing="false" onAction="#logOut" styleClass="user-prompt-text" text="Log Out" />
-            <Label layoutX="14.0" layoutY="20.0" styleClass="user-prompt-title" text="Logo mt foda KKKKKKKKKKK" />
+            <Label layoutX="14.0" layoutY="20.0" styleClass="user-prompt-title" text="Atelier Manager" />
          </children>
       </Pane>
       <TabPane layoutY="59.0" prefHeight="541.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
@@ -25,11 +25,11 @@
                      <children>
                         <TableView fx:id="estimateTable" prefHeight="460.0" prefWidth="900.0">
                           <columns>
-                            <TableColumn fx:id="estimateCustomerCol" prefWidth="200.0" text="Customer" />
-                            <TableColumn fx:id="estimateUserCol" prefWidth="200.0" text="Employe" />
-                              <TableColumn fx:id="estimateDateCol" prefWidth="100.0" text="Date" />
-                              <TableColumn fx:id="estimateValueCol" prefWidth="100.0" text="Total Value" />
-                              <TableColumn fx:id="estimateObservationsCol" prefWidth="299.0" text="Observations" />
+                            <TableColumn fx:id="estimateCustomerCol" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Customer" />
+                            <TableColumn fx:id="estimateUserCol" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Employe" />
+                              <TableColumn fx:id="estimateDateCol" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Date" />
+                              <TableColumn fx:id="estimateValueCol" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Total Value" />
+                              <TableColumn fx:id="estimateObservationsCol" maxWidth="299.0" minWidth="299.0" prefWidth="299.0" text="Observations" />
                           </columns>
                         </TableView>
                         <Button fx:id="newEstimateBtn" layoutX="797.0" layoutY="473.0" mnemonicParsing="false" onAction="#newEstimate" text="New Estimate" />
@@ -45,12 +45,15 @@
                      <children>
                         <TableView fx:id="ordersTable" prefHeight="460.0" prefWidth="900.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="C1" />
-                            <TableColumn prefWidth="75.0" text="C2" />
+                            <TableColumn fx:id="orderCustomerNameCol" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Cliente" />
+                            <TableColumn fx:id="orderCreationDateCol" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="Creation Date" />
+                              <TableColumn fx:id="orderTotalValueCol" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Total Value" />
+                              <TableColumn fx:id="orderStatusCol" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Order Status" />
+                              <TableColumn fx:id="orderIsPaidCol" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="Paid For" />
                           </columns>
                         </TableView>
-                        <Button layoutX="14.0" layoutY="473.0" mnemonicParsing="false" text="Button" />
-                        <Button layoutX="424.0" layoutY="473.0" mnemonicParsing="false" text="Button" />
+                        <Button fx:id="deleteOrderBtn" layoutX="14.0" layoutY="473.0" mnemonicParsing="false" onAction="#deleteOrder" text="Delete selected" />
+                        <Button fx:id="viewAndEditOrderBtn" layoutX="383.0" layoutY="473.0" mnemonicParsing="false" onAction="#viewOrder" text="View and Edit selected" />
                      </children>
                   </AnchorPane>
               </content>
@@ -61,8 +64,8 @@
                      <children>
                         <TableView fx:id="modelsTable" prefHeight="460.0" prefWidth="900.0">
                           <columns>
-                            <TableColumn fx:id="modelNameCol" prefWidth="700.0" text="Name" />
-                            <TableColumn fx:id="modelPriceCol" prefWidth="199.0" text="Price" />
+                            <TableColumn fx:id="modelNameCol" maxWidth="700.0" minWidth="700.0" prefWidth="700.0" text="Name" />
+                            <TableColumn fx:id="modelPriceCol" maxWidth="199.0" minWidth="199.0" prefWidth="199.0" text="Price" />
                           </columns>
                         </TableView>
                         <Button fx:id="newModelBtn" layoutX="808.0" layoutY="473.0" mnemonicParsing="false" onAction="#newModel" text="New Model" />
@@ -78,7 +81,7 @@
                      <children>
                         <TableView fx:id="piecesTable" prefHeight="460.0" prefWidth="900.0">
                           <columns>
-                            <TableColumn fx:id="pieceNameCol" prefWidth="700.0" text="Name" />
+                            <TableColumn fx:id="pieceNameCol" maxWidth="700.0" minWidth="700.0" prefWidth="700.0" text="Name" />
                             <TableColumn fx:id="piecePriceCol" prefWidth="199.0" text="Price" />
                           </columns>
                         </TableView>
@@ -95,7 +98,7 @@
                      <children>
                         <TableView fx:id="customersTable" prefHeight="460.0" prefWidth="900.0">
                           <columns>
-                            <TableColumn fx:id="customerNameCol" prefWidth="300.0" text="Name" />
+                            <TableColumn fx:id="customerNameCol" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" text="Name" />
                             <TableColumn fx:id="customerPhoneCol" prefWidth="300.0" text="Phone" />
                               <TableColumn fx:id="customerEmailCol" prefWidth="299.0" text="E-mail" />
                           </columns>
@@ -113,8 +116,8 @@
                      <children>
                         <TableView fx:id="fabricsTable" prefHeight="460.0" prefWidth="900.0">
                           <columns>
-                            <TableColumn fx:id="fabricNameCol" prefWidth="700.0" text="Name" />
-                            <TableColumn fx:id="fabricPriceCol" prefWidth="199.0" text="Price" />
+                            <TableColumn fx:id="fabricNameCol" maxWidth="700.0" minWidth="700.0" prefWidth="700.0" text="Name" />
+                            <TableColumn fx:id="fabricPriceCol" maxWidth="199.0" minWidth="199.0" prefWidth="199.0" text="Price" />
                           </columns>
                         </TableView>
                         <Button fx:id="newFabricBtn" layoutX="811.0" layoutY="473.0" mnemonicParsing="false" onAction="#newFabric" text="New Fabric" />

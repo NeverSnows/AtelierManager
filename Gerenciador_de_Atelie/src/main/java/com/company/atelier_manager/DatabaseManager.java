@@ -1,6 +1,8 @@
 package com.company.atelier_manager;
 
 import com.company.atelier_manager.structure.*;
+import com.company.atelier_manager.structure.enums.OrderStatus;
+import com.company.atelier_manager.structure.enums.PaymentOption;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -101,6 +103,27 @@ public class DatabaseManager {
         return fabrics;
     }
 
+    public static List<Order> getOrders(){
+        List<Order> orders = new ArrayList<>();
+
+        Estimate estimate = new Estimate(
+                new User("rogerin", "email1", "password1"),
+                new Customer(1, "João", "12342356", "joão@jão.bom", null),
+                new Date(),
+                new ArrayList<OrderItem>(),
+                "observacoes e pa");
+
+        //Objetos de teste.
+        orders.add(new Order(
+                estimate,
+                new Date(),
+                true,
+                PaymentOption.PIX,
+                OrderStatus.DELIVERED
+        ));
+
+        return orders;
+    }
     //Metodos de deletar
     public static void deleteEstimate(Estimate estimate){
 

@@ -55,7 +55,28 @@ public class MainController implements Initializable {
 
     //region Orders
     @FXML
-    private TableView<?> ordersTable;
+    private TableView<Order> ordersTable;
+
+    @FXML
+    private TableColumn<Order, String> orderCustomerNameCol;
+
+    @FXML
+    private TableColumn<Order, String> orderCreationDateCol;
+
+    @FXML
+    private TableColumn<Order, String> orderTotalValueCol;
+
+    @FXML
+    private TableColumn<Order, String> orderStatusCol;
+
+    @FXML
+    private TableColumn<Order, String> orderIsPaidCol;
+
+    @FXML
+    private Button deleteOrderBtn;
+
+    public ObservableList<Order> observableOrders;
+
     //endregion
 
     //region Models
@@ -141,67 +162,59 @@ public class MainController implements Initializable {
     //region Delete Methods
     @FXML
     void deleteCustomer(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Delete Customer?");
-        alert.setContentText("Are you sure you want to delete this customer?\nThis action is irreversible!");
-        Optional<ButtonType> result = alert.showAndWait();
-
-        if(result.get() == ButtonType.OK){
+        if (confirmDelete("Delete Customer?", "Are you sure you want to delete this customer?\nThis action is irreversible!")) {
             DatabaseManager.deleteCustomer(customersTable.getSelectionModel().getSelectedItem());
-            observableCustomers.remove(customersTable.getSelectionModel().getSelectedItem());
+            updateTables();
         }
     }
 
     @FXML
     void deleteEstimate(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Delete Estimate?");
-        alert.setContentText("Are you sure you want to delete this estimate?\nThis action is irreversible!");
-        Optional<ButtonType> result = alert.showAndWait();
-
-        if(result.get() == ButtonType.OK) {
+        if (confirmDelete("Delete Estimate?", "Are you sure you want to delete this estimate?\nThis action is irreversible, and will also delete associate orders!")) {
             DatabaseManager.deleteEstimate(estimateTable.getSelectionModel().getSelectedItem());
-            observableEstimate.remove(estimateTable.getSelectionModel().getSelectedItem());
+            updateTables();
+        }
+    }
+
+    @FXML
+    void deleteOrder(ActionEvent event) {
+        if (confirmDelete("Delete Order?", "Are you sure you want to delete this order?\nThis action is irreversible!")) {
+            DatabaseManager.deleteOrder(ordersTable.getSelectionModel().getSelectedItem());
+            updateTables();
         }
     }
 
     @FXML
     void deleteFabric(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Delete Fabric?");
-        alert.setContentText("Are you sure you want to delete this fabric?\nThis action is irreversible!");
-        Optional<ButtonType> result = alert.showAndWait();
-
-        if(result.get() == ButtonType.OK) {
+        if (confirmDelete("Delete Fabric?", "Are you sure you want to delete this fabric?\nThis action is irreversible!")) {
             DatabaseManager.deleteFabric(fabricsTable.getSelectionModel().getSelectedItem());
-            observableFabrics.remove(fabricsTable.getSelectionModel().getSelectedItem());
+            updateTables();
         }
     }
 
     @FXML
     void deleteModel(ActionEvent event){
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Delete Model?");
-        alert.setContentText("Are you sure you want to delete this model?\nThis action is irreversible!");
-        Optional<ButtonType> result = alert.showAndWait();
-
-        if (result.get() == ButtonType.OK) {
+        if (confirmDelete("Delete model?", "Are you sure you want to delete this model?\nThis action is irreversible!")) {
             DatabaseManager.deleteModel(modelsTable.getSelectionModel().getSelectedItem());
-            observableModels.remove(modelsTable.getSelectionModel().getSelectedItem());
+            updateTables();
         }
     }
 
     @FXML
     void deletePiece(ActionEvent event) {
+        if (confirmDelete("Delete Piece?", "Are you sure you want to delete this piece?\nThis action is irreversible!")) {
+            DatabaseManager.deletePiece(piecesTable.getSelectionModel().getSelectedItem());
+            updateTables();
+        }
+    }
+
+    private boolean confirmDelete(String title, String content){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Delete Piece?");
-        alert.setContentText("Are you sure you want to delete this piece?\nThis action is irreversible!");
+        alert.setTitle(title);
+        alert.setContentText(content);
         Optional<ButtonType> result = alert.showAndWait();
 
-        if (result.get() == ButtonType.OK) {
-            DatabaseManager.deletePiece(piecesTable.getSelectionModel().getSelectedItem());
-            observablePieces.remove(piecesTable.getSelectionModel().getSelectedItem());
-        }
+        return result.isPresent() && result.get() == ButtonType.OK;
     }
     //endregion
 
@@ -243,6 +256,11 @@ public class MainController implements Initializable {
     }
 
     @FXML
+    void viewOrder(ActionEvent event){
+
+    }
+
+    @FXML
     void viewFabric(ActionEvent event) {
 
     }
@@ -270,15 +288,17 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //Pepares columns.
-        customerNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        customerEmailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
-        customerPhoneCol.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
-
         estimateCustomerCol.setCellValueFactory(new PropertyValueFactory<>("customerName"));
         estimateUserCol.setCellValueFactory(new PropertyValueFactory<>("userName"));
         estimateDateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
         estimateValueCol.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
         estimateObservationsCol.setCellValueFactory(new PropertyValueFactory<>("observations"));
+
+        orderCustomerNameCol.setCellValueFactory(new PropertyValueFactory<>("customerName"));
+        orderCreationDateCol.setCellValueFactory(new PropertyValueFactory<>("creationDate"));
+        orderTotalValueCol.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
+        orderStatusCol.setCellValueFactory(new PropertyValueFactory<>("orderStatus"));
+        orderIsPaidCol.setCellValueFactory(new PropertyValueFactory<>("paidOut"));
 
         modelNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         modelPriceCol.setCellValueFactory(new PropertyValueFactory<>("value"));
@@ -286,30 +306,50 @@ public class MainController implements Initializable {
         pieceNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         piecePriceCol.setCellValueFactory(new PropertyValueFactory<>("value"));
 
+        customerNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        customerEmailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
+        customerPhoneCol.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
+
         fabricNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         fabricPriceCol.setCellValueFactory(new PropertyValueFactory<>("value"));
 
-        //Gets refference from DB.
-        currentEstimates = DatabaseManager.getEstimates();
-        //currentOrders = DatabaseManager.getOrders();
-        currentModels = DatabaseManager.getModels();
-        currentPieces = DatabaseManager.getPieces();
-        currentCustomers = DatabaseManager.getCustomers();
-        currentFabrics = DatabaseManager.getFabrics();
-
-        observableCustomers = FXCollections.observableArrayList(currentCustomers);
-        observableEstimate = FXCollections.observableArrayList(currentEstimates);
-        observableModels = FXCollections.observableArrayList(currentModels);
-        observablePieces = FXCollections.observableArrayList(currentPieces);
-        observableFabrics = FXCollections.observableArrayList(currentFabrics);
+        updateTables();
 
         //Saves data to tables.
         customersTable.setItems(observableCustomers);
         estimateTable.setItems(observableEstimate);
+        ordersTable.setItems(observableOrders);
         modelsTable.setItems(observableModels);
         piecesTable.setItems(observablePieces);
         fabricsTable.setItems(observableFabrics);
     }
 
+    public void updateTables(){
+        //Gets refference from DB.
+        currentEstimates = DatabaseManager.getEstimates();
+        currentOrders = DatabaseManager.getOrders();
+        currentModels = DatabaseManager.getModels();
+        currentPieces = DatabaseManager.getPieces();
+        currentCustomers = DatabaseManager.getCustomers();
+        currentFabrics = DatabaseManager.getFabrics();
+
+        //turns all table lists into Observable Lists
+        observableCustomers = FXCollections.observableArrayList(currentCustomers);
+        observableEstimate = FXCollections.observableArrayList(currentEstimates);
+        observableOrders = FXCollections.observableArrayList(currentOrders);
+        observableModels = FXCollections.observableArrayList(currentModels);
+        observablePieces = FXCollections.observableArrayList(currentPieces);
+        observableFabrics = FXCollections.observableArrayList(currentFabrics);
+
+    }
+
     //endregion
 }
+/*
+nome cliente
+data criacao
+valor
+
+situacao
+
+* **/

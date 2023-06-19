@@ -29,7 +29,7 @@
                   <Font name="Arial" size="16.0" />
                </font></Label>
             <Label layoutX="20.0" layoutY="428.0" styleClass="user-prompt-text" text="Already have an account?" />
-            <Button fx:id="logInBtn" layoutX="20.0" layoutY="456.0" mnemonicParsing="false" onAction="#swapToLogin" styleClass="user-prompt-text" text="Log in" />
+            <Button fx:id="logInBtn" layoutX="20.0" layoutY="456.0" mnemonicParsing="false" onAction="#swapToLogin" styleClass="user-prompt-text" text="Cancel" />
             <Button fx:id="createAccountBtn" layoutX="369.0" layoutY="456.0" mnemonicParsing="false" onAction="#createAccount" styleClass="user-prompt-text" text="Create account" />
             <GridPane layoutX="20.0" layoutY="150.0" prefHeight="150.0" prefWidth="460.0" styleClass="info-container">
               <columnConstraints>
