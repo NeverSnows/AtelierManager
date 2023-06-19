@@ -6,6 +6,7 @@ import com.company.model.Usuario;
 import com.company.model.Util.CriptografiaDeSenha;
 
 import javax.persistence.NoResultException;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
@@ -72,6 +73,18 @@ public class UsuarioDAO extends GenericDAO<Usuario>{
             return null;
         }
     }
+
+    public void atualizarSenha(String email, String novaSenha) {
+        String senhaCriptografada = CriptografiaDeSenha.encriptaSenha(novaSenha);
+
+        EntityManager.getEM().getTransaction().begin();
+        Query query = EntityManager.getEM().createNativeQuery("UPDATE usuario SET senhaUsuario = :senha WHERE emailUsuario = :email");
+        query.setParameter("senha", senhaCriptografada);
+        query.setParameter("email", email);
+        query.executeUpdate();
+        EntityManager.getEM().getTransaction().commit();
+    }
+
 
     public static void main(String[] args) {
         UsuarioDAO ud =new UsuarioDAO();

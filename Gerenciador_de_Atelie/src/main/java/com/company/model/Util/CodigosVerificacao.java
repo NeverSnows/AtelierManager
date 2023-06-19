@@ -6,10 +6,13 @@ import java.util.Random;
 import java.util.UUID;
 
 @Entity
-@Table(name = "codigosverificacao")
+@Table(name = "codigosverificacao")//, uniqueConstraints = @UniqueConstraint(columnNames = {"email"}))
 public class CodigosVerificacao {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String email;
 
     private String codigo;
@@ -21,6 +24,7 @@ public class CodigosVerificacao {
     public CodigosVerificacao(){}
     public CodigosVerificacao(String email){
         this.codigo = gerarCodigoVerificacao();
+        this.email = email;
         this.horarioCriacao = LocalDateTime.now();
         this.foiUsado = false;
     }

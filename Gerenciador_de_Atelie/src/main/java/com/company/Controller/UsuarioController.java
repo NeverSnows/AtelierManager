@@ -1,10 +1,14 @@
 package com.company.Controller;
 
+import com.company.dao.CodigosVerificacaoDAO;
+import com.company.dao.EntityManager;
 import com.company.dao.UsuarioDAO;
 import com.company.model.Usuario;
 import com.company.model.Util.CodigosVerificacao;
 import com.company.model.Util.CriptografiaDeSenha;
 import com.company.model.Util.DispararEmail;
+
+import javax.persistence.TypedQuery;
 
 public class UsuarioController {
     UsuarioDAO ud = new UsuarioDAO();
@@ -54,15 +58,27 @@ public class UsuarioController {
             System.out.println("Já cadastrado");
         }
     }
+    public void alterarSenha(String email, String novaSenha) {
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        CodigosVerificacaoDAO codigoDAO = new CodigosVerificacaoDAO();
+
+        usuarioDAO.atualizarSenha(email, novaSenha);
+
+        codigoDAO.atualizarCodigo(email);
+    }
+
+
+
     public static void main(String[] args) {
         UsuarioController uc = new UsuarioController();
         CodigosVerificacaoController cvd = new CodigosVerificacaoController();
         System.out.println(uc.verificarCredenciais("emmaiol", "senha"));
         System.out.println(uc.validaEmail("emailok"));
-        //uc.cadastraNovoUsuario("raissa", "raissalagess@gmail.com", "senha");
+        //uc.cadastraNovoUsuario("raissa", "raissalagess@gmail.com", "senhaa");
 
-        // uc.enviaCodigoVerificacao("raissalagess@gmail.com");
-        System.out.println(cvd.validaCodigoVerificacao("9752644498"));
+        //uc.enviaCodigoVerificacao("raissalagess@gmail.com");
+        if(cvd.validaCodigoVerificacao("86820067"))
+            uc.alterarSenha("raissalagess@gmail.com", "afgrhgbaa");
 
 
     }

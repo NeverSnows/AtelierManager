@@ -5,28 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8fe37a1-ad24-452e-800d-71fd31deb106" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/CodigosVerificacaoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/PedidoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/CodigosVerificacaoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Util/CodigosVerificacao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Util/DispararEmail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Controller/GenericController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/GenericController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Controller/TecidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/TecidoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Controller/CodigosVerificacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/CodigosVerificacaoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/AdicionalDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/AdicionalDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/TecidoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/TecidoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/CodigosVerificacaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/CodigosVerificacaoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/UsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Util/GerarRelatorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Util/GerarRelatorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Util/CodigosVerificacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Util/CodigosVerificacao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Controller/GenericController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Controller/GenericController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Controller/TecidoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Controller/TecidoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Controller/CodigosVerificacaoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Controller/CodigosVerificacaoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/Controller/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Controller/UsuarioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/AdicionalDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/AdicionalDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/TecidoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/TecidoDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/CodigosVerificacaoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/CodigosVerificacaoDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/UsuarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Util/CodigosVerificacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Util/CodigosVerificacao.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

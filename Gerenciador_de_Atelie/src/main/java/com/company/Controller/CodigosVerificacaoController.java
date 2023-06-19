@@ -7,10 +7,10 @@ public class CodigosVerificacaoController {
     CodigosVerificacaoDAO cvd = new CodigosVerificacaoDAO();
 
     public CodigosVerificacao criarCodigoVerificacao(String email){
-        CodigosVerificacao cv = new CodigosVerificacao(email);
-        cvd.inserir(cv);
+        CodigosVerificacao codigo = cvd.buscaCodigoPorEmail(email);
+        cvd.inserir(codigo);
 
-        return cv;
+        return codigo;
     }
 
     public boolean validaCodigoVerificacao(String codigo){
