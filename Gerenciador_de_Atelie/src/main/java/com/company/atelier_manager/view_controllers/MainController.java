@@ -25,6 +25,12 @@ public class MainController implements Initializable {
     private List<Customer> currentCustomers;
     private List<Fabric> currentFabrics;
 
+    public ObservableList<Estimate> observableEstimate;
+    public ObservableList<Order> observableOrders;
+    public ObservableList<Model> observableModels;
+    public ObservableList<Piece> observablePieces;
+    public ObservableList<Customer> observableCustomers;
+    public ObservableList<Fabric> observableFabrics;
     //region Estimates
     @FXML
     private TableView<Estimate> estimateTable;
@@ -50,7 +56,6 @@ public class MainController implements Initializable {
     @FXML
     private Button newEstimateBtn;
 
-    public ObservableList<Estimate> observableEstimate;
     //endregion
 
     //region Orders
@@ -75,7 +80,6 @@ public class MainController implements Initializable {
     @FXML
     private Button deleteOrderBtn;
 
-    public ObservableList<Order> observableOrders;
 
     //endregion
 
@@ -95,7 +99,6 @@ public class MainController implements Initializable {
     @FXML
     private Button newModelBtn;
 
-    public ObservableList<Model> observableModels;
     //endregion
 
     //region Pieces
@@ -114,7 +117,6 @@ public class MainController implements Initializable {
     @FXML
     private Button newPieceBtn;
 
-    public ObservableList<Piece> observablePieces;
     //endregion
 
     //region Customers
@@ -136,7 +138,6 @@ public class MainController implements Initializable {
     @FXML
     private Button registerCustomerBtn;
 
-    public ObservableList<Customer> observableCustomers;
 
     //endregion
 
@@ -156,7 +157,6 @@ public class MainController implements Initializable {
     @FXML
     private Button newFabricBtn;
 
-    public ObservableList<Fabric> observableFabrics;
     //endregion
 
     //region Delete Methods
@@ -295,7 +295,7 @@ public class MainController implements Initializable {
         estimateObservationsCol.setCellValueFactory(new PropertyValueFactory<>("observations"));
 
         orderCustomerNameCol.setCellValueFactory(new PropertyValueFactory<>("customerName"));
-        orderCreationDateCol.setCellValueFactory(new PropertyValueFactory<>("creationDate"));
+        orderCreationDateCol.setCellValueFactory(new PropertyValueFactory<>("paymentDate"));
         orderTotalValueCol.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
         orderStatusCol.setCellValueFactory(new PropertyValueFactory<>("orderStatus"));
         orderIsPaidCol.setCellValueFactory(new PropertyValueFactory<>("paidOut"));

@@ -27,9 +27,9 @@
                           <columns>
                             <TableColumn fx:id="estimateCustomerCol" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Customer" />
                             <TableColumn fx:id="estimateUserCol" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Employe" />
-                              <TableColumn fx:id="estimateDateCol" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Date" />
+                              <TableColumn fx:id="estimateDateCol" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Date" />
                               <TableColumn fx:id="estimateValueCol" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Total Value" />
-                              <TableColumn fx:id="estimateObservationsCol" maxWidth="299.0" minWidth="299.0" prefWidth="299.0" text="Observations" />
+                              <TableColumn fx:id="estimateObservationsCol" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="Observations" />
                           </columns>
                         </TableView>
                         <Button fx:id="newEstimateBtn" layoutX="797.0" layoutY="473.0" mnemonicParsing="false" onAction="#newEstimate" text="New Estimate" />
@@ -46,10 +46,10 @@
                         <TableView fx:id="ordersTable" prefHeight="460.0" prefWidth="900.0">
                           <columns>
                             <TableColumn fx:id="orderCustomerNameCol" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Cliente" />
-                            <TableColumn fx:id="orderCreationDateCol" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="Creation Date" />
-                              <TableColumn fx:id="orderTotalValueCol" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Total Value" />
+                            <TableColumn fx:id="orderCreationDateCol" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Creation Date" />
+                              <TableColumn fx:id="orderTotalValueCol" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Total Value" />
                               <TableColumn fx:id="orderStatusCol" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Order Status" />
-                              <TableColumn fx:id="orderIsPaidCol" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="Paid For" />
+                              <TableColumn fx:id="orderIsPaidCol" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="Is Paid Out" />
                           </columns>
                         </TableView>
                         <Button fx:id="deleteOrderBtn" layoutX="14.0" layoutY="473.0" mnemonicParsing="false" onAction="#deleteOrder" text="Delete selected" />
