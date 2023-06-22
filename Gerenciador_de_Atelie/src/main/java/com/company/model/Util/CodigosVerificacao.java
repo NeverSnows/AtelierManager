@@ -31,7 +31,7 @@ public class CodigosVerificacao {
 
     public static String gerarCodigoVerificacao() {
         Random random = new Random();
-        int randomNumber = random.nextInt(90000000) + 10000000; // Gera um número aleatório entre 10000000 e 99999999
+        int randomNumber = random.nextInt(90000000) + 10000000;
         return String.valueOf(randomNumber);
     }
 

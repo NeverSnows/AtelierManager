@@ -2,7 +2,7 @@ package com.company.atelier_manager.view_controllers;
 
 import com.company.atelier_manager.AtelieManagerApplication;
 import com.company.atelier_manager.DatabaseManager;
-import com.company.atelier_manager.structure.Fabric;
+import com.company.model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

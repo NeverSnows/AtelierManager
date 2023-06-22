@@ -1,19 +1,19 @@
 package com.company.dao;
 
-import com.company.model.MedidaPeca;
+import com.company.model.MeasurePeca;
 
 import javax.persistence.NoResultException;
 import java.util.List;
 
-public class MedidaPecaDAO  extends GenericDAO{
+public class  MedidaPecaDAO  extends GenericDAO<MeasurePeca>{
     @Override
-    public Object buscarPorId(Long id) {
+    public MeasurePeca buscarPorId(Long id) {
         try {
-            String instrucaoSQL = "SELECT i FROM MedidaPeca mp " +
-                    "JOIN FETCH mp.cliente " +
+            String instrucaoSQL = "SELECT i FROM MeasurePeca mp " +
+                    "JOIN FETCH mp.piece " +
                     "WHERE i.id = :id";
             return EntityManager.getEM()
-                    .createQuery(instrucaoSQL, MedidaPeca.class)
+                    .createQuery(instrucaoSQL, MeasurePeca.class)
                     .setParameter("id", id)
                     .getSingleResult();
         } catch (NoResultException e) {
@@ -25,15 +25,15 @@ public class MedidaPecaDAO  extends GenericDAO{
 
     @Override
     public List buscarTodos() {
-        String instrucaoSQL = "SELECT mp from MedidaPeca mp";
-        return EntityManager.getEM().createQuery(instrucaoSQL, MedidaPeca.class).getResultList();
+        String instrucaoSQL = "SELECT mp from MeasurePeca mp";
+        return EntityManager.getEM().createQuery(instrucaoSQL, MeasurePeca.class).getResultList();
     }
 
     @Override
-    public List<MedidaPeca> buscarTodosComFiltro(String atributo, String valor) {
-        String instrucaoSQL = "SELECT mp FROM MedidaPeca mp WHERE mp." + atributo +
+    public List<MeasurePeca> buscarTodosComFiltro(String atributo, String valor) {
+        String instrucaoSQL = "SELECT mp FROM MeasurePeca mp WHERE mp." + atributo +
                 " like '%" + valor + "%'";
-        return EntityManager.getEM().createQuery(instrucaoSQL, MedidaPeca.class).getResultList();
+        return EntityManager.getEM().createQuery(instrucaoSQL, MeasurePeca.class).getResultList();
     }
 
 }

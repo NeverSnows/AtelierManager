@@ -1,31 +1,30 @@
 package com.company.dao;
 
-import com.company.model.Cliente;
-import com.company.model.MedidaCliente;
+import com.company.model.Customer;
 
 import java.util.List;
 
-public class ClienteDAO extends GenericDAO {
+public class ClienteDAO extends GenericDAO <Customer>{
 
     @Override
-    public Object buscarPorId(Long id) {
+    public Customer buscarPorId(Long id) {
         try {
-            return EntityManager.getEM().find(Cliente.class, id);
+            return EntityManager.getEM().find(Customer.class, id);
         } catch (Exception e) {
             throw new RuntimeException("Erro ao buscar entidade por ID: " + e.getMessage(), e);
         }
     }
     @Override
-    public List buscarTodos() {
-        String instrucaoSQL = "SELECT t FROM Cliente t";
-        return EntityManager.getEM().createQuery(instrucaoSQL, Cliente.class).getResultList();
+    public List<Customer> buscarTodos() {
+        String instrucaoSQL = "SELECT t FROM Customer t";
+        return EntityManager.getEM().createQuery(instrucaoSQL, Customer.class).getResultList();
     }
 
     @Override
-    public List<Cliente> buscarTodosComFiltro(String atributo, String valor) {
-        String instrucaoSQL = "SELECT c FROM Cliente t WHERE c." + atributo +
+    public List<Customer> buscarTodosComFiltro(String atributo, String valor) {
+        String instrucaoSQL = "SELECT c FROM Customer t WHERE c." + atributo +
                 " like '%" + valor + "%'";
-        return EntityManager.getEM().createQuery(instrucaoSQL, Cliente.class).getResultList();
+        return EntityManager.getEM().createQuery(instrucaoSQL, Customer.class).getResultList();
 
     }
 }

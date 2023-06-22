@@ -39,7 +39,7 @@ public class DispararEmail {
 
     public static void main(String[] args) {
         DispararEmail emailSender = new DispararEmail();
-        String destinatario = "pauloeduardomartins700305@gmail.com";
+        String destinatario = "gjhgt67uhgty67om@cu.cu";
         String assunto = "oii";
         String mensagem = "te amo mucho";
 

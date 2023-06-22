@@ -1,19 +1,22 @@
 package com.company.atelier_manager.view_controllers;
 
 import com.company.atelier_manager.AtelieManagerApplication;
-import com.company.atelier_manager.structure.Customer;
+import com.company.model.*;
 import com.company.atelier_manager.DatabaseManager;
-import com.company.atelier_manager.structure.Measure;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.util.StringConverter;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class RegisterCustomerController {
+public class RegisterCustomerController implements Initializable {
 
     @FXML
     private Button addMeasureBtn;
@@ -28,7 +31,7 @@ public class RegisterCustomerController {
     private TextField emailTextField;
 
     @FXML
-    private ComboBox<String> measuresComboBox;
+    private ComboBox<MeasureCliente> measuresComboBox;
 
     @FXML
     private TextField nameTextField;
@@ -44,16 +47,16 @@ public class RegisterCustomerController {
 
     @FXML
     private Button registerBtn;
-    private final List<Measure> measures = new ArrayList<>();
+
     @FXML
     void addMeasure(ActionEvent event) {
         String name = measureNameTextField.getText();
         String value = measureValueTextField.getText();
 
         if(!name.isBlank() && !value.isBlank()){
-            Measure measure = new Measure(name, value);
-            measures.add(measure);
-            measuresComboBox.getItems().add(measure.getName() + ": " + measure.getSize());
+            MeasureCliente measure = new MeasureCliente(name, value);
+            measuresComboBox.getItems().add(measure);
+
             measureNameTextField.setText("");
             measureValueTextField.setText("");
         }
@@ -62,11 +65,8 @@ public class RegisterCustomerController {
     @FXML
     void deleteMeasure(ActionEvent event) {
         try{
-            measures.remove(measuresComboBox.getSelectionModel().getSelectedIndex());
             measuresComboBox.getItems().remove(measuresComboBox.getSelectionModel().getSelectedIndex());
-        }catch (IndexOutOfBoundsException exception){
-            System.out.println("No measures to be deleted.");
-        }
+        }catch (IndexOutOfBoundsException ignored){}
     }
 
     @FXML
@@ -79,6 +79,8 @@ public class RegisterCustomerController {
         String name = nameTextField.getText();
         String phone = phoneTextField.getText();
         String email = emailTextField.getText();
+        List<MeasureCliente> measures = measuresComboBox.getItems();
+
         Customer customer = new Customer(name, phone, email, measures);
 
         if(!name.isBlank() && !phone.isBlank() && !email.isBlank() && !measures.isEmpty()){
@@ -100,4 +102,18 @@ public class RegisterCustomerController {
         emailTextField.setText("");
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        measuresComboBox.setConverter(new StringConverter<MeasureCliente>() {
+            @Override
+            public String toString(MeasureCliente measure) {
+                return measure.getNome() + ": " + measure.getTamanho();
+            }
+
+            @Override
+            public MeasureCliente fromString(String s) {
+                return null;
+            }
+        });
+    }
 }

@@ -1,21 +1,20 @@
 package com.company.atelier_manager;
 
-import com.company.atelier_manager.structure.*;
-import com.company.atelier_manager.structure.enums.OrderStatus;
-import com.company.atelier_manager.structure.enums.PaymentOption;
+import com.company.Controller.*;
+import com.company.dao.UsuarioDAO;
+import com.company.model.*;
 
-import java.time.LocalDate;
 import java.util.*;
 
 public class DatabaseManager {
+   private UsuarioController usuarioController = new UsuarioController();
     public static boolean validateUser(User user){
-        //pega a senha e email do usuario e valida se dão match no BD. Retorna true se sim.
-        return true;
+        return UsuarioController.verificarCredenciais(user.getEmailUsuario(), user.getSenhaUsuario());
     }
     public static User getUserByEmail(String email){
         //(email deveria ser UNIQUE, para garantir que esta consulta faça sentido)
         //busca um usuario com este email, monta um Usuario e retorna ele.
-        return new User("Test User of Silva", "test_user@of.silva", "testPassw0rd");
+        return UsuarioDAO.retornarUsuarioPorEmail(email);
     }
 
     /*
@@ -29,22 +28,23 @@ public class DatabaseManager {
     */
 
     public static boolean registerUser(User user){
-        return true;
+        return UsuarioDAO.inserirr(user);
     }
 
     public static void registerModel(Model model){
-        //salva o modelo no BD.
+        ModeloController.insereModelo(model);
     }
 
     public static void registerPiece(Piece piece){
-        //salva a peça no BD
+        PecaController.inserePeca(piece);
     }
 
     public static void registerFabric(Fabric fabric){
-        //salva o tecido no BD
+        TecidoController.insereTecido(fabric);
     }
 
     public static void registerCustomer(Customer customer){
+        ClienteController.insereCliente(customer);
         //registra o cliente no BD, criando uma linha de medida na tabela TB_MEDIDAS
         // para cada medida em measures e colocando o id do cliente (gerado pelo db) como FK em cada medida.
     }
@@ -52,60 +52,60 @@ public class DatabaseManager {
     //Funções getAlgo() apenas retornam listas, nada de mais.
     public static List<Customer> getCustomers(){
         //Retorna uma lista com todos os clientes em objetos Customer.
-        List<Customer> customers = new ArrayList<>();
+        //List<Customer> customers = new ArrayList<>();
 
         //Objetos de teste.
-        customers.add(new Customer(1, "João", "12342356", "joão@jão.bom", null));
-        customers.add(new Customer(2, "Maria", "11 94545 4545", "joão.e.maria@hotmail.bom", null));
+        //customers.add(new Customer(1, "João", "12342356", "joão@jão.bom", null));
+        //customers.add(new Customer(2, "Maria", "11 94545 4545", "joão.e.maria@hotmail.bom", null));
 
-        return customers;
+        return ClienteController.retornaClientes();
     }
 
     public static List<Estimate> getEstimates(){
         //Retorna uma lista com todos os clientes em objetos Customer.
-        List<Estimate> customers = new ArrayList<>();
+        //List<Estimate> customers = new ArrayList<>();
 
         //Objeto de teste.
-        customers.add(new Estimate(
+        /*customers.add(new Estimate(
                 new User("rogerin", "email1", "password1"),
                 new Customer(1, "João", "12342356", "joão@jão.bom", null),
                 new Date(),
                 new ArrayList<OrderItem>(),
-                "observacoes e pa"));
+                "observacoes e pa"));*/
 
-        return customers;
+        return OrcamentoController.retornaOrcamentos();
     }
 
     public static List<Model> getModels(){
-        List<Model> models = new ArrayList<>();
+        //List<Model> models = new ArrayList<>();
 
         //Objetos de teste.
-        models.add(new Model("camisa longa", 5.99));
-        models.add(new Model("camisa curta", 99.99));
-        return models;
+        //models.add(new Model("camisa longa", 5.99));
+        //models.add(new Model("camisa curta", 99.99));
+        return ModeloController.retornaModelos();
     }
 
     public static List<Piece> getPieces(){
-        List<Piece> pieces = new ArrayList<>();
+        //List<Piece> pieces = new ArrayList<>();
 
         //Objetos de teste.
-        pieces.add(new Piece("Camisa", 12.33));
-        pieces.add(new Piece("calça", 50.55));
-        return pieces;
+        //pieces.add(new Piece("Camisa", 12.33));
+        //pieces.add(new Piece("calça", 50.55));
+        return PecaController.retornaPecas();
     }
 
     public static List<Fabric> getFabrics(){
-        List<Fabric> fabrics = new ArrayList<>();
+        //List<Fabric> fabrics = new ArrayList<>();
 
         //Objetos de teste.
-        fabrics.add(new Fabric("Seda", 1.11));
-        fabrics.add(new Fabric("Ceda", 1.13));
-        return fabrics;
+        //fabrics.add(new Fabric("Seda", 1.11));
+        //fabrics.add(new Fabric("Ceda", 1.13));
+        return TecidoController.retornaTecidos();
     }
 
     public static List<Order> getOrders(){
-        List<Order> orders = new ArrayList<>();
-
+        //List<Orderr> orders = new ArrayList<>();
+/*
         Estimate estimate = new Estimate(
                 new User("rogerin", "email1", "password1"),
                 new Customer(1, "João", "12342356", "joão@jão.bom", null),
@@ -114,15 +114,15 @@ public class DatabaseManager {
                 "observacoes e pa");
 
         //Objetos de teste.
-        orders.add(new Order(
+        orders.add(new Orderr(
                 estimate,
                 new Date(),
                 true,
                 PaymentOption.PIX,
                 OrderStatus.DELIVERED
         ));
-
-        return orders;
+*/
+        return PedidoController.retornarPedidos();
     }
     //Metodos de deletar
     public static void deleteEstimate(Estimate estimate){
@@ -135,13 +135,17 @@ public class DatabaseManager {
 
     }
     public static void deletePiece(Piece piece){
-
+        PecaController.deletarPeca(piece);
     }
     public static void deleteCustomer(Customer customer){
 
     }
     public static void deleteFabric(Fabric fabric){
 
+    }
+
+    public static void registerEstimate(Estimate estimate){
+        //registra um orçamento no bd.
     }
 
 }

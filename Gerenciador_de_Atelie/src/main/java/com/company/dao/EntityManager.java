@@ -1,7 +1,5 @@
 package com.company.dao;
 
-import com.company.model.Usuario;
-
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
@@ -13,7 +11,7 @@ public class EntityManager {
 
     static {
         instanciaEMF = Persistence.createEntityManagerFactory("myPersistenceUnit");
-        instanciaEM = instanciaEMF.createEntityManager();
+        instanciaEM = instanciaEMF.createEntityManager(); // garante que ele seja inicializado
     }
 
     public static EntityManagerFactory getEMF(){
@@ -23,8 +21,6 @@ public class EntityManager {
     public static javax.persistence.EntityManager getEM(){
         return instanciaEM;
     }
-
-    // Resto do código...
 
 
 }

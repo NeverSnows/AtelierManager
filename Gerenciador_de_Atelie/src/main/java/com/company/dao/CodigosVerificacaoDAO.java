@@ -1,6 +1,5 @@
 package com.company.dao;
 
-import com.company.model.Usuario;
 import com.company.model.Util.CodigosVerificacao;
 
 import javax.persistence.NoResultException;

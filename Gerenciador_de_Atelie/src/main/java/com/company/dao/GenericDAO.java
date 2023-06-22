@@ -1,7 +1,6 @@
 package com.company.dao;
 
 import com.company.model.Identificavel;
-import com.company.model.Usuario;
 
 import java.util.List;
 
@@ -33,15 +32,14 @@ public abstract class GenericDAO<T> {
         }
     }
 
-    <T extends Identificavel> void deletar(T entidade){
+    public <T extends Identificavel> void deletar(T entidade){
         try {
             EntityManager.getEM().getTransaction().begin();
-
+            T entidadee = entidade;
             if (!EntityManager.getEM().contains(entidade)) {
-                entidade = (T) EntityManager.getEM().find(entidade.getClass(), entidade.getId());
+                entidadee = (T) EntityManager.getEM().find(entidade.getClass(), entidade.getId());
             }
-
-            EntityManager.getEM().remove(entidade);
+            EntityManager.getEM().remove(entidadee);
             EntityManager.getEM().getTransaction().commit();
         } catch (Exception e) {
             EntityManager.getEM().getTransaction().rollback();

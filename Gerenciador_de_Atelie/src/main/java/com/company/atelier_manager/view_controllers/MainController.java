@@ -1,7 +1,7 @@
 package com.company.atelier_manager.view_controllers;
 
 import com.company.atelier_manager.*;
-import com.company.atelier_manager.structure.*;
+import com.company.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,11 +9,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import java.util.List;
+
+import java.util.*;
 
 import java.net.URL;
-import java.util.Optional;
-import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
@@ -25,15 +24,11 @@ public class MainController implements Initializable {
     private List<Customer> currentCustomers;
     private List<Fabric> currentFabrics;
 
-    public ObservableList<Estimate> observableEstimate;
-    public ObservableList<Order> observableOrders;
-    public ObservableList<Model> observableModels;
-    public ObservableList<Piece> observablePieces;
-    public ObservableList<Customer> observableCustomers;
-    public ObservableList<Fabric> observableFabrics;
+    private ObservableList<Size> observableSizes;
+
     //region Estimates
     @FXML
-    private TableView<Estimate> estimateTable;
+    public TableView<Estimate> estimateTable;
 
     @FXML
     private TableColumn<Estimate, String> estimateCustomerCol;
@@ -50,17 +45,11 @@ public class MainController implements Initializable {
     @FXML
     private TableColumn<Estimate, Double> estimateValueCol;
 
-    @FXML
-    private Button deleteEstimateBtn;
-
-    @FXML
-    private Button newEstimateBtn;
-
     //endregion
 
     //region Orders
     @FXML
-    private TableView<Order> ordersTable;
+    public TableView<Order> ordersTable;
 
     @FXML
     private TableColumn<Order, String> orderCustomerNameCol;
@@ -77,33 +66,22 @@ public class MainController implements Initializable {
     @FXML
     private TableColumn<Order, String> orderIsPaidCol;
 
-    @FXML
-    private Button deleteOrderBtn;
-
-
     //endregion
 
     //region Models
     @FXML
-    private TableView<Model> modelsTable;
+    public TableView<Model> modelsTable;
 
     @FXML
     private TableColumn<Model, String> modelNameCol;
 
     @FXML
     private TableColumn<Model, String> modelPriceCol;
-
-    @FXML
-    private Button deleteModelBtn;
-
-    @FXML
-    private Button newModelBtn;
-
     //endregion
 
     //region Pieces
     @FXML
-    private TableView<Piece> piecesTable;
+    public TableView<Piece> piecesTable;
 
     @FXML
     private TableColumn<Piece, String> pieceNameCol;
@@ -112,16 +90,12 @@ public class MainController implements Initializable {
     private TableColumn<Piece, String> piecePriceCol;
 
     @FXML
-    private Button deletePieceBtn;
-
-    @FXML
-    private Button newPieceBtn;
-
+    private TableColumn<Piece, String> pieceModelCol;
     //endregion
 
     //region Customers
     @FXML
-    private TableView<Customer> customersTable;
+    public TableView<Customer> customersTable;
 
     @FXML
     private TableColumn<Customer, String> customerEmailCol;
@@ -131,32 +105,17 @@ public class MainController implements Initializable {
 
     @FXML
     private TableColumn<Customer, String> customerPhoneCol;
-
-    @FXML
-    private Button deleteCustomerBtn;
-
-    @FXML
-    private Button registerCustomerBtn;
-
-
     //endregion
 
     //region Fabrics
     @FXML
-    private TableView<Fabric> fabricsTable;
+    public TableView<Fabric> fabricsTable;
 
     @FXML
     private TableColumn<Fabric, String> fabricNameCol;
 
     @FXML
     private TableColumn<Fabric, String> fabricPriceCol;
-
-    @FXML
-    private Button deleteFabricBtn;
-
-    @FXML
-    private Button newFabricBtn;
-
     //endregion
 
     //region Delete Methods
@@ -212,6 +171,7 @@ public class MainController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle(title);
         alert.setContentText(content);
+        alert.setHeaderText(alert.getTitle());
         Optional<ButtonType> result = alert.showAndWait();
 
         return result.isPresent() && result.get() == ButtonType.OK;
@@ -221,6 +181,7 @@ public class MainController implements Initializable {
     //region New Methods
     @FXML
     void newEstimate(ActionEvent event){
+        AtelieManagerApplication.swapToNewEstimate();
     }
     @FXML
     void newFabric(ActionEvent event) {
@@ -247,12 +208,14 @@ public class MainController implements Initializable {
     //region View and Edit Methods
     @FXML
     void viewCustomer(ActionEvent event) {
-
+        CurrentSessionSingleton.getInstance().selectedTableIndex = customersTable.getSelectionModel().getSelectedIndex();
+        AtelieManagerApplication.swapToViewCustomer();
     }
 
     @FXML
     void viewEstimate(ActionEvent event) {
-
+        CurrentSessionSingleton.getInstance().selectedTableIndex = estimateTable.getSelectionModel().getSelectedIndex();
+        AtelieManagerApplication.swapToViewEstimate();
     }
 
     @FXML
@@ -262,23 +225,55 @@ public class MainController implements Initializable {
 
     @FXML
     void viewFabric(ActionEvent event) {
-
+        CurrentSessionSingleton.getInstance().selectedTableIndex = fabricsTable.getSelectionModel().getSelectedIndex();
+        AtelieManagerApplication.swapToViewFabric();
     }
 
     @FXML
     void viewModelBtn(ActionEvent event) {
-
+        CurrentSessionSingleton.getInstance().selectedTableIndex = modelsTable.getSelectionModel().getSelectedIndex();
+        AtelieManagerApplication.swapToViewModel();
     }
 
     @FXML
     void viewPiece(ActionEvent event) {
-
+        CurrentSessionSingleton.getInstance().selectedTableIndex = piecesTable.getSelectionModel().getSelectedIndex();
+        AtelieManagerApplication.swapToViewPiece();
     }
     //endregion
 
     //region Main
     @FXML
+    void escalateEstimate(){
+        CurrentSessionSingleton.getInstance().selectedTableIndex = estimateTable.getSelectionModel().getSelectedIndex();
+        AtelieManagerApplication.swapToEscalateEstimate();
+    }
+
+    @FXML
+    void printOrder(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
+        try{
+            //Pega a referencia do pedido selecionado;
+            Order selectedOrder = ordersTable.getSelectionModel().getSelectedItem();
+
+            //TODO que porra eu chamo aqui?? Tem um printOrder(Order order) em algum lugar?
+
+            alert.setTitle("Order printed Successfully");
+            alert.setContentText("");
+            alert.setHeaderText(alert.getTitle());
+            alert.showAndWait();
+        }catch (IndexOutOfBoundsException exception){
+            alert.setTitle("No Order Selecter");
+            alert.setContentText("Please, select an Order.");
+            alert.setHeaderText(alert.getTitle());
+            alert.showAndWait();
+        }
+    }
+
+    @FXML
     void logOut(ActionEvent event) {
+        CurrentSessionSingleton.getInstance().loggedUser = null;
         AtelieManagerApplication.swapToLogIn();
     }
 
@@ -305,6 +300,7 @@ public class MainController implements Initializable {
 
         pieceNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         piecePriceCol.setCellValueFactory(new PropertyValueFactory<>("value"));
+        pieceModelCol.setCellValueFactory(new PropertyValueFactory<>("modelName"));
 
         customerNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         customerEmailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
@@ -313,15 +309,16 @@ public class MainController implements Initializable {
         fabricNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         fabricPriceCol.setCellValueFactory(new PropertyValueFactory<>("value"));
 
+        observableSizes = FXCollections.observableArrayList(Arrays.asList(Size.values()));
         updateTables();
 
-        //Saves data to tables.
-        customersTable.setItems(observableCustomers);
-        estimateTable.setItems(observableEstimate);
-        ordersTable.setItems(observableOrders);
-        modelsTable.setItems(observableModels);
-        piecesTable.setItems(observablePieces);
-        fabricsTable.setItems(observableFabrics);
+        customersTable.setItems(CurrentSessionSingleton.getInstance().observableCustomers);
+        estimateTable.setItems(CurrentSessionSingleton.getInstance().observableEstimate);
+        ordersTable.setItems(CurrentSessionSingleton.getInstance().observableOrders);
+        modelsTable.setItems(CurrentSessionSingleton.getInstance().observableModels);
+        piecesTable.setItems(CurrentSessionSingleton.getInstance().observablePieces);
+        fabricsTable.setItems(CurrentSessionSingleton.getInstance().observableFabrics);
+
     }
 
     public void updateTables(){
@@ -333,23 +330,14 @@ public class MainController implements Initializable {
         currentCustomers = DatabaseManager.getCustomers();
         currentFabrics = DatabaseManager.getFabrics();
 
-        //turns all table lists into Observable Lists
-        observableCustomers = FXCollections.observableArrayList(currentCustomers);
-        observableEstimate = FXCollections.observableArrayList(currentEstimates);
-        observableOrders = FXCollections.observableArrayList(currentOrders);
-        observableModels = FXCollections.observableArrayList(currentModels);
-        observablePieces = FXCollections.observableArrayList(currentPieces);
-        observableFabrics = FXCollections.observableArrayList(currentFabrics);
-
+        //saves data on CurrentSessionSingleton
+        CurrentSessionSingleton.getInstance().observableCustomers = FXCollections.observableArrayList(currentCustomers);
+        CurrentSessionSingleton.getInstance().observableEstimate = FXCollections.observableArrayList(currentEstimates);
+        CurrentSessionSingleton.getInstance().observableOrders = FXCollections.observableArrayList(currentOrders);
+        CurrentSessionSingleton.getInstance().observableModels = FXCollections.observableArrayList(currentModels);
+        CurrentSessionSingleton.getInstance().observablePieces = FXCollections.observableArrayList(currentPieces);
+        CurrentSessionSingleton.getInstance().observableFabrics = FXCollections.observableArrayList(currentFabrics);
+        CurrentSessionSingleton.getInstance().observableSizes = observableSizes;
     }
-
     //endregion
 }
-/*
-nome cliente
-data criacao
-valor
-
-situacao
-
-* **/

@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -10,11 +11,11 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.atelier_manager.view_controllers.SignInController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.atelier_manager.view_controllers.NewEstimateController">
   <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="85.0" prefWidth="200.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="500.0" prefWidth="500.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="50.0" prefWidth="200.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="800.0" minWidth="743.0" prefWidth="743.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -22,34 +23,77 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Pane prefHeight="200.0" prefWidth="200.0" styleClass="user-prompt" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <Pane prefHeight="500.0" prefWidth="472.0" styleClass="user-prompt" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
             <Label layoutX="14.0" layoutY="14.0" styleClass="user-prompt-title" text="New Estimate">
                <font>
                   <Font name="Arial" size="16.0" />
                </font></Label>
-            <Label layoutX="20.0" layoutY="428.0" styleClass="user-prompt-text" text="Already have an account?" />
-            <Button fx:id="logInBtn" layoutX="20.0" layoutY="456.0" mnemonicParsing="false" onAction="#swapToLogin" styleClass="user-prompt-text" text="Log in" />
-            <Button fx:id="createAccountBtn" layoutX="369.0" layoutY="456.0" mnemonicParsing="false" onAction="#createAccount" styleClass="user-prompt-text" text="Create account" />
-            <GridPane layoutX="20.0" layoutY="125.0" prefHeight="250.0" prefWidth="460.0" styleClass="info-container">
+            <Button layoutX="20.0" layoutY="456.0" mnemonicParsing="false" onAction="#returnToMain" styleClass="user-prompt-text" text="Return" />
+            <Button layoutX="657.0" layoutY="456.0" mnemonicParsing="false" onAction="#createEstimate" styleClass="user-prompt-text" text="Create Estimate" />
+            <GridPane layoutX="20.0" layoutY="128.0" maxWidth="300.0" minWidth="361.0" prefHeight="245.0" prefWidth="361.0" styleClass="info-container">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="360.0" minWidth="360.0" prefWidth="360.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
               </columnConstraints>
               <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Label styleClass="user-prompt-text" text="Total Value" GridPane.rowIndex="2" />
                   <Label styleClass="user-prompt-text" text="Customer" />
-                  <ComboBox prefWidth="363.0" promptText="Select a Customer" GridPane.columnIndex="1" />
+                  <ComboBox fx:id="customerComboBox" prefHeight="25.0" prefWidth="434.0" promptText="Select a Customer" GridPane.columnIndex="1" />
                   <Label styleClass="user-prompt-text" text="Items" GridPane.rowIndex="1" />
-                  <ComboBox prefHeight="25.0" prefWidth="434.0" promptText="Add Items" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="itemsComboBox" prefHeight="25.0" prefWidth="404.0" promptText="Add Items on the right" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="totalValueField" editable="false" promptText="0.00" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextArea fx:id="observationsField" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label styleClass="user-prompt-text" text="Observations" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#addItem" text="Add Item" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#deleteItem" text="Delete Item" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
+               </children>
+            </GridPane>
+            <GridPane layoutX="425.0" layoutY="34.0" prefHeight="231.0" prefWidth="350.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.0" minWidth="100.0" prefWidth="132.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="217.0" prefWidth="218.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="30.0" prefWidth="115.0" styleClass="user-prompt-title" text="New Order Item">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label styleClass="user-prompt-text" text="Piece" GridPane.rowIndex="1" />
+                  <Label styleClass="user-prompt-text" text="Size" GridPane.rowIndex="2" />
+                  <Label styleClass="user-prompt-text" text="Color" GridPane.rowIndex="4" />
+                  <Label styleClass="user-prompt-text" text="Extra Requirements" GridPane.rowIndex="5" />
+                  <Label styleClass="user-prompt-text" text="Fabric" GridPane.rowIndex="3" />
+                  <ComboBox fx:id="pieceComboBox" prefHeight="25.0" prefWidth="302.0" promptText="Select a Piece" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="sizeComboBox" prefHeight="25.0" prefWidth="277.0" promptText="Select a Size" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="fabricComboBox" prefHeight="25.0" prefWidth="274.0" promptText="Select a Fabric" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ComboBox fx:id="colorComboBox" prefHeight="25.0" prefWidth="279.0" promptText="Select a Color" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ComboBox fx:id="extraRequirementComboBox" prefHeight="25.0" prefWidth="290.0" promptText="Select an Extra Requirement" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label styleClass="user-prompt-text" text="Requirement Name" GridPane.rowIndex="6" />
+                  <Label styleClass="user-prompt-text" text="Requirement Value" GridPane.rowIndex="7" />
+                  <TextField fx:id="requirementNameTextField" promptText="Shorter right sleeve" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TextField fx:id="requirementValueTextField" promptText="2.50" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Button mnemonicParsing="false" onAction="#deleteRequirement" text="Delete Requirement" GridPane.rowIndex="8" />
+                  <Button mnemonicParsing="false" onAction="#addRequirement" text="Add Requirement" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8" />
                </children>
             </GridPane>
          </children></Pane>

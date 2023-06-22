@@ -1,22 +1,20 @@
 package com.company.Controller;
 
 import com.company.dao.CodigosVerificacaoDAO;
-import com.company.dao.EntityManager;
 import com.company.dao.UsuarioDAO;
-import com.company.model.Usuario;
+import com.company.model.User;
 import com.company.model.Util.CodigosVerificacao;
 import com.company.model.Util.CriptografiaDeSenha;
 import com.company.model.Util.DispararEmail;
 
-import javax.persistence.TypedQuery;
-
 public class UsuarioController {
     UsuarioDAO ud = new UsuarioDAO();
-    public boolean verificarCredenciais(String email, String senha) {
-        String senhaCriptografada = CriptografiaDeSenha.encriptaSenha(senha);
-        Usuario usuario = ud.retornarUsuarioPorEmailESenha(email, senhaCriptografada);
 
-        if (usuario != null && usuario.getEmailUsuario().equals(email) && usuario.getSenhaUsuario().equals(senhaCriptografada)) {
+    public static boolean verificarCredenciais(String email, String senha) {
+        String senhaCriptografada = CriptografiaDeSenha.encriptaSenha(senha);
+        User user = UsuarioDAO.retornarUsuarioPorEmailESenha(email, senhaCriptografada);
+
+        if (user != null && user.getEmailUsuario().equals(email) && user.getSenhaUsuario().equals(senhaCriptografada)) {
             return true;
         } else {
             System.out.println("Não foi possível fazer a validação");
@@ -24,10 +22,10 @@ public class UsuarioController {
         }
     }
 
-    public boolean validaEmail(String email){
-        Usuario usuario = ud.retornarUsuarioPorEmail(email);
+    public static boolean validaEmail(String email){
+        User user = UsuarioDAO.retornarUsuarioPorEmail(email);
         try{
-            return usuario.getEmailUsuario().equals(email);
+            return user.getEmailUsuario().equals(email);
         }
         catch (NullPointerException npe){
             System.out.println("Usuario não cadastrado");
@@ -51,8 +49,8 @@ public class UsuarioController {
 
     public void cadastraNovoUsuario(String nomeUsuario, String emailUsuario, String senha){
         if(!validaEmail(emailUsuario)){
-            Usuario usuario = new Usuario(nomeUsuario, emailUsuario, senha);
-            ud.inserir(usuario);
+            User user = new User(nomeUsuario, emailUsuario, senha);
+            ud.inserir(user);
         }
         else{
             System.out.println("Já cadastrado");
@@ -74,10 +72,11 @@ public class UsuarioController {
         CodigosVerificacaoController cvd = new CodigosVerificacaoController();
         System.out.println(uc.verificarCredenciais("emmaiol", "senha"));
         System.out.println(uc.validaEmail("emailok"));
-        //uc.cadastraNovoUsuario("raissa", "raissalagess@gmail.com", "senhaa");
+        uc.cadastraNovoUsuario("prof", "igor.sampaio@ifsp.edu.br", "senha");
 
-        //uc.enviaCodigoVerificacao("raissalagess@gmail.com");
-        if(cvd.validaCodigoVerificacao("86820067"))
+
+       // uc.enviaCodigoVerificacao("raissalagess@gmail.com");
+       if(cvd.validaCodigoVerificacao("23217312"))
             uc.alterarSenha("raissalagess@gmail.com", "afgrhgbaa");
 
 

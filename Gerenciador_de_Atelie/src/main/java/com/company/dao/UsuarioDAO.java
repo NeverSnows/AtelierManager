@@ -1,8 +1,7 @@
 package com.company.dao;
 
 import com.company.Controller.UsuarioController;
-import com.company.model.Identificavel;
-import com.company.model.Usuario;
+import com.company.model.User;
 import com.company.model.Util.CriptografiaDeSenha;
 
 import javax.persistence.NoResultException;
@@ -10,47 +9,48 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-public class UsuarioDAO extends GenericDAO<Usuario>{
-    @Override
-    public void inserir(Usuario usuario){
+public class UsuarioDAO extends GenericDAO<User>{
+    public static boolean inserirr(User user){
 
-        usuario.setSenhaUsuario(CriptografiaDeSenha.encriptaSenha(usuario.getSenhaUsuario()));
+        user.setSenhaUsuario(CriptografiaDeSenha.encriptaSenha(user.getSenhaUsuario()));
         try {
             EntityManager.getEM().getTransaction().begin();
-            EntityManager.getEM().persist(usuario);
+            EntityManager.getEM().persist(user);
             EntityManager.getEM().getTransaction().commit();
+            return true;
         } catch (Exception e) {
             EntityManager.getEM().getTransaction().rollback();
             throw new RuntimeException("Erro ao inserir a entidade: " + e.getMessage(), e);
+
         }
     }
     @Override
-    public Usuario buscarPorId(Long id) {
+    public User buscarPorId(Long id) {
         try {
-            return EntityManager.getEM().find(Usuario.class, id);
+            return EntityManager.getEM().find(User.class, id);
         } catch (Exception e) {
             throw new RuntimeException("Erro ao buscar entidade por ID: " + e.getMessage(), e);
         }
     }
 
     @Override
-    public List<Usuario> buscarTodos() {
-        String instrucaoSQL = "SELECT t FROM Usuario t";
-        return EntityManager.getEM().createQuery(instrucaoSQL, Usuario.class).getResultList();    }
+    public List<User> buscarTodos() {
+        String instrucaoSQL = "SELECT t FROM User t";
+        return EntityManager.getEM().createQuery(instrucaoSQL, User.class).getResultList();    }
 
 
     @Override
-    public List<Usuario> buscarTodosComFiltro(String atributo, String valor) {
-        String instrucaoSQL = "SELECT t FROM Usuario t WHERE t." + atributo +
+    public List<User> buscarTodosComFiltro(String atributo, String valor) {
+        String instrucaoSQL = "SELECT t FROM User t WHERE t." + atributo +
                 " like '%" + valor + "%'";
-        return EntityManager.getEM().createQuery(instrucaoSQL, Usuario.class).getResultList();
+        return EntityManager.getEM().createQuery(instrucaoSQL, User.class).getResultList();
 
     }
 
-    public Usuario retornarUsuarioPorEmailESenha(String email, String senha) {
-        TypedQuery<Usuario> instrucaoSQL = EntityManager.getEM().createQuery(
-                "SELECT u FROM Usuario u WHERE u.emailUsuario = :email AND u.senhaUsuario = :senha",
-                Usuario.class);
+    public static User retornarUsuarioPorEmailESenha(String email, String senha) {
+        TypedQuery<User> instrucaoSQL = EntityManager.getEM().createQuery(
+                "SELECT u FROM User u WHERE u.emailUsuario = :email AND u.senhaUsuario = :senha",
+                User.class);
         instrucaoSQL.setParameter("email", email);
         instrucaoSQL.setParameter("senha", senha);
 
@@ -61,10 +61,26 @@ public class UsuarioDAO extends GenericDAO<Usuario>{
         }
     }
 
-    public Usuario retornarUsuarioPorEmail(String email) {
-        TypedQuery<Usuario> instrucaoSQL = EntityManager.getEM().createQuery(
-                "SELECT u FROM Usuario u WHERE u.emailUsuario = :email",
-                Usuario.class);
+    public static boolean retornarUsuarioPorEmailESenhaBool(String email, String senha) {
+        TypedQuery<User> instrucaoSQL = EntityManager.getEM().createQuery(
+                "SELECT u FROM User u WHERE u.emailUsuario = :email AND u.senhaUsuario = :senha",
+                User.class);
+        instrucaoSQL.setParameter("email", email);
+        instrucaoSQL.setParameter("senha", senha);
+
+
+        try {
+            instrucaoSQL.getSingleResult();
+            return true;
+        } catch (NoResultException e) {
+            return false;
+        }
+    }
+
+    public static User retornarUsuarioPorEmail(String email) {
+        TypedQuery<User> instrucaoSQL = EntityManager.getEM().createQuery(
+                "SELECT u FROM User u WHERE u.emailUsuario = :email",
+                User.class);
         instrucaoSQL.setParameter("email", email);
 
         try {
@@ -78,7 +94,7 @@ public class UsuarioDAO extends GenericDAO<Usuario>{
         String senhaCriptografada = CriptografiaDeSenha.encriptaSenha(novaSenha);
 
         EntityManager.getEM().getTransaction().begin();
-        Query query = EntityManager.getEM().createNativeQuery("UPDATE usuario SET senhaUsuario = :senha WHERE emailUsuario = :email");
+        Query query = EntityManager.getEM().createNativeQuery("UPDATE User SET senhaUsuario = :senha WHERE emailUsuario = :email");
         query.setParameter("senha", senhaCriptografada);
         query.setParameter("email", email);
         query.executeUpdate();
@@ -88,8 +104,8 @@ public class UsuarioDAO extends GenericDAO<Usuario>{
 
     public static void main(String[] args) {
         UsuarioDAO ud =new UsuarioDAO();
-        Usuario usuario = new Usuario("raissinha", "emailok", "senha");
-        //ud.inserir(usuario);
+        User user = new User("raissinha", "emailok", "senha");
+        ud.inserir(user);
 
         UsuarioController uc = new UsuarioController();
 
