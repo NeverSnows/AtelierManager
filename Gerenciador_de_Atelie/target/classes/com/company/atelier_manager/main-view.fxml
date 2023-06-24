@@ -63,7 +63,7 @@
                         <TableView fx:id="ordersTable" prefHeight="460.0" prefWidth="900.0">
                           <columns>
                             <TableColumn fx:id="orderCustomerNameCol" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Cliente" />
-                            <TableColumn fx:id="orderCreationDateCol" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Creation Date" />
+                            <TableColumn fx:id="orderCreationDateCol" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Payment Date" />
                               <TableColumn fx:id="orderTotalValueCol" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Total Value" />
                               <TableColumn fx:id="orderStatusCol" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Order Status" />
                               <TableColumn fx:id="orderIsPaidCol" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="Is Paid Out" />

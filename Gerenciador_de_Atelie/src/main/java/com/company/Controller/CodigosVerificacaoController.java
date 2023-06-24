@@ -4,7 +4,7 @@ import com.company.dao.CodigosVerificacaoDAO;
 import com.company.model.Util.CodigosVerificacao;
 
 public class CodigosVerificacaoController {
-    CodigosVerificacaoDAO cvd = new CodigosVerificacaoDAO();
+    private static CodigosVerificacaoDAO cvd = new CodigosVerificacaoDAO();
 
     public CodigosVerificacao criarCodigoVerificacao(String email){
         CodigosVerificacao codigo = cvd.buscaCodigoPorEmail(email);
@@ -13,7 +13,7 @@ public class CodigosVerificacaoController {
         return codigo;
     }
 
-    public boolean validaCodigoVerificacao(String codigo){
+    public static boolean validaCodigoVerificacao(String email, String codigo){
         if(cvd.buscaCodigo(codigo) != null)
             return true;
         return false;

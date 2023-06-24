@@ -9,11 +9,9 @@ module com.example.gerenciador_de_atelie {
 
     opens com.company.atelier_manager.view_controllers to javafx.fxml;
     opens com.company.atelier_manager.structure to javafx.fxml;
-    opens com.company.atelier_manager.structure.enums to javafx.fxml;
     opens com.company.atelier_manager to javafx.fxml;
 
     exports com.company.atelier_manager.structure;
-    exports com.company.atelier_manager.structure.enums;
     exports com.company.atelier_manager.view_controllers;
     exports com.company.atelier_manager;
     exports com.company.model;

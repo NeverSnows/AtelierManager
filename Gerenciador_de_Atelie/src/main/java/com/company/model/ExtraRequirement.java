@@ -8,28 +8,28 @@ public class ExtraRequirement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
-    private Double valorAdicional;
+    private String name;
+    private Double value;
     @ManyToOne
     private OrderItem orderItem;
     public ExtraRequirement(){}
 
-    public ExtraRequirement(String nome, Double valorAdicional, OrderItem orderItem) {
-        setNome(nome);
-        setValorAdicional(valorAdicional);
-        setItemPedido(orderItem);
+    public ExtraRequirement(String name, Double value, OrderItem orderItem) {
+        setName(name);
+        setValue(value);
+        setOrderItem(orderItem);
     }
 
-    public ExtraRequirement(Long id, String nome, Double valorAdicional, OrderItem orderItem) {
+    public ExtraRequirement(Long id, String name, Double value, OrderItem orderItem) {
         setId(id);
-        setNome(nome);
-        setValorAdicional(valorAdicional);
-        setItemPedido(orderItem);
+        setName(name);
+        setValue(value);
+        setOrderItem(orderItem);
     }
 
     public ExtraRequirement(String name, double valueDouble) {
-        setNome(nome);
-        setValorAdicional(valorAdicional);
+        setName(name);
+        setValue(value);
     }
 
 
@@ -41,25 +41,25 @@ public class ExtraRequirement {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Double getValorAdicional() {
-        return valorAdicional;
+    public Double getValue() {
+        return value;
     }
 
-    public void setValorAdicional(Double valorAdicional) {
-        this.valorAdicional = valorAdicional;
+    public void setValue(Double value) {
+        this.value = value;
     }
     public OrderItem getItemPedido() {
         return orderItem;
     }
 
-    public void setItemPedido(OrderItem orderItem) {
+    public void setOrderItem(OrderItem orderItem) {
         this.orderItem = orderItem;
     }}

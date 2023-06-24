@@ -1,87 +1,72 @@
 package com.company.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "Pedido")
-public class Order extends Estimate {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(name = "data_entrega")
-    private Date dataEntrega;
+public class Order extends Estimate implements Identificavel {
+
+
+    private Long orderId;
 
     @Column(name = "pago")
-    private Boolean pago;
+    private Boolean paidOut;
 
     @Column(name = "data_pagamento")
-    private Date dataPagamento;
+    private Date paymentDate;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo_pagamento")
-    private TipoPagamento tipoPagamento;
+    private PaymentOption paymentOption;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "situacao")
-    private Situacao situacao;
+    private OrderStatus orderStatus;
 
     public Order() {
     }
 
-    public Order(Estimate estimate, Long id, Date dataEntrega, Boolean pago, Date dataPagamento,
-                 TipoPagamento tipoPagamento, Situacao situacao) {
-        super(estimate.getId(), estimate.getUsuario(), estimate.getCliente(), estimate.getDataCriacao(),
-                estimate.getItensPedido(), estimate.getObservacoes());
-        this.id = id;
-        this.dataEntrega = dataEntrega;
-        this.pago = pago;
-        this.dataPagamento = dataPagamento;
-        this.tipoPagamento = tipoPagamento;
-        this.situacao = situacao;
+    public Order(Estimate estimate, Long orderId, Date paymentDate, boolean paidOut, PaymentOption paymentOption, OrderStatus orderStatus) {
+        super(estimate.getId(), estimate.getUser(), estimate.getCustomer(), estimate.getDate(), estimate.getOrderItems(), estimate.getObservations());
+        this.paymentDate = paymentDate;
+        this.paidOut = paidOut;
+        this.paymentOption = paymentOption;
+        this.orderStatus = orderStatus;
+        this.orderId = orderId;
     }
-
-    public Order(Estimate estimate, Date dataEntrega, Boolean pago, Date dataPagamento,
-                 TipoPagamento tipoPagamento, Situacao situacao) {
-       super(estimate.getId(), estimate.getUsuario(), estimate.getCliente(), estimate.getDataCriacao(),
-               estimate.getItensPedido(), estimate.getObservacoes());
-        this.dataEntrega = dataEntrega;
-        this.pago = pago;
-        this.dataPagamento = dataPagamento;
-        this.tipoPagamento = tipoPagamento;
-        this.situacao = situacao;
+    public Order(Estimate estimate, Date paymentDate, Boolean paidOut,
+                 PaymentOption paymentOption, OrderStatus orderStatus) {
+       super(estimate.getId(), estimate.getUser(), estimate.getCustomer(), estimate.getDate(),
+               estimate.getOrderItems(), estimate.getObservations());
+        this.paymentDate = paymentDate;
+        this.paidOut = paidOut;
+        this.paymentOption = paymentOption;
+        this.orderStatus = orderStatus;
     }
 
 
-    public Date getDataEntrega() {
-        return dataEntrega;
+
+    public Boolean getPaidOut() {
+        return paidOut;
     }
 
-    public Boolean getPago() {
-        return pago;
+    public Date getPaymentDate() {
+        return paymentDate;
     }
 
-    public Date getDataPagamento() {
-        return dataPagamento;
+    public PaymentOption getPaymentOption() {
+        return paymentOption;
     }
 
-    public TipoPagamento getTipoPagamento() {
-        return tipoPagamento;
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
     }
+    public void  setOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+    public Long getId() {        return orderId;    }
 
-    public Situacao getSituacao() {
-        return situacao;
-    }
-
-    @Override
-    public Long getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public void setOrderId(Long orderId) {        this.orderId = orderId;}
 }

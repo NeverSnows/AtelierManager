@@ -83,6 +83,9 @@ public class RegisterCustomerController implements Initializable {
 
         Customer customer = new Customer(name, phone, email, measures);
 
+        for (MeasureCliente measure : measures) {
+            measure.setCustomer(customer);
+        }
         if(!name.isBlank() && !phone.isBlank() && !email.isBlank() && !measures.isEmpty()){
             DatabaseManager.registerCustomer(customer);
             AtelieManagerApplication.swapToMain();

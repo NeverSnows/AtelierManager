@@ -6,7 +6,6 @@ import com.company.atelier_manager.DatabaseManager;
 import com.company.model.*;
 import com.company.model.MeasureCliente;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -87,10 +86,10 @@ public class ViewCustomerController implements Initializable {
         if(!name.isBlank() && !phone.isBlank() && !email.isBlank() && !measures.isEmpty()){
             Optional<ButtonType> result = alert.showAndWait();
             if(result.isPresent() && result.get() == ButtonType.OK){
-                selectedCustomer.setNome(name);
-                selectedCustomer.setTelefone(phone);
+                selectedCustomer.setName(name);
+                selectedCustomer.setPhoneNumber(phone);
                 selectedCustomer.setEmail(email);
-                selectedCustomer.setMedidas(measures);
+                selectedCustomer.setMeasures(measures);
 
                 DatabaseManager.registerCustomer(selectedCustomer);
                 AtelieManagerApplication.swapToMain();
@@ -105,10 +104,10 @@ public class ViewCustomerController implements Initializable {
 
     public void updateCustomerInfo() throws IndexOutOfBoundsException{
         Customer selectedCustomer = CurrentSessionSingleton.getInstance().observableCustomers.get(CurrentSessionSingleton.getInstance().selectedTableIndex);
-        nameTextField.setText(selectedCustomer.getNome());
-        phoneTextField.setText(selectedCustomer.getTelefone());
+        nameTextField.setText(selectedCustomer.getName());
+        phoneTextField.setText(selectedCustomer.getPhoneNumber());
         emailTextField.setText(selectedCustomer.getEmail());
-        measuresComboBox.setItems(FXCollections.observableArrayList(selectedCustomer.getMedidas()));
+        measuresComboBox.setItems(FXCollections.observableArrayList(selectedCustomer.getMeasures()));
     }
 
     @Override

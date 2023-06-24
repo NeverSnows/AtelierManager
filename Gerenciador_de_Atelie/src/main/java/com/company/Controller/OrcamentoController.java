@@ -12,4 +12,12 @@ public class OrcamentoController {
     public static List<Estimate> retornaOrcamentos(){
         return od.buscarTodos();
     }
+
+    public static void deletaOrcamento(Estimate estimate){
+        od.deletar(estimate);
+    }
+
+    public static void registraOrcamento(Estimate estimate){
+        od.atualizar(estimate);
+    }
 }

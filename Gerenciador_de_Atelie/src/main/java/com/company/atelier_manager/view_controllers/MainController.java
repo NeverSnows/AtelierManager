@@ -120,50 +120,80 @@ public class MainController implements Initializable {
 
     //region Delete Methods
     @FXML
-    void deleteCustomer(ActionEvent event) {
-        if (confirmDelete("Delete Customer?", "Are you sure you want to delete this customer?\nThis action is irreversible!")) {
-            DatabaseManager.deleteCustomer(customersTable.getSelectionModel().getSelectedItem());
-            updateTables();
+    void deleteCustomer() {
+        Customer selectedCustomer = customersTable.getSelectionModel().getSelectedItem();
+        if(selectedCustomer != null){
+            if (confirmDelete("Delete Customer?", "Are you sure you want to delete this customer?\nThis action is irreversible!")) {
+                DatabaseManager.deleteCustomer(selectedCustomer);
+                updateTables();
+            }
+        }else {
+            alertNoSelection("Customer", " customer");
         }
     }
 
     @FXML
-    void deleteEstimate(ActionEvent event) {
-        if (confirmDelete("Delete Estimate?", "Are you sure you want to delete this estimate?\nThis action is irreversible, and will also delete associate orders!")) {
-            DatabaseManager.deleteEstimate(estimateTable.getSelectionModel().getSelectedItem());
-            updateTables();
+    void deleteEstimate() {
+        Estimate selectedEstimate = estimateTable.getSelectionModel().getSelectedItem();
+        if(selectedEstimate != null){
+            if (confirmDelete("Delete Estimate?", "Are you sure you want to delete this estimate?\nThis action is irreversible, and will also delete associate orders!")) {
+                DatabaseManager.deleteEstimate(selectedEstimate);
+                updateTables();
+            }
+        }else{
+            alertNoSelection("Estimate", "n estimate");
         }
     }
 
     @FXML
-    void deleteOrder(ActionEvent event) {
-        if (confirmDelete("Delete Order?", "Are you sure you want to delete this order?\nThis action is irreversible!")) {
-            DatabaseManager.deleteOrder(ordersTable.getSelectionModel().getSelectedItem());
-            updateTables();
+    void deleteOrder() {
+        Order selectedOrder = ordersTable.getSelectionModel().getSelectedItem();
+        if(selectedOrder != null){
+            if (confirmDelete("Delete Order?", "Are you sure you want to delete this order?\nThis action is irreversible!")) {
+                DatabaseManager.deleteOrder(selectedOrder);
+                updateTables();
+            }
+        }else{
+            alertNoSelection("Order", "n order");
         }
     }
 
     @FXML
-    void deleteFabric(ActionEvent event) {
-        if (confirmDelete("Delete Fabric?", "Are you sure you want to delete this fabric?\nThis action is irreversible!")) {
-            DatabaseManager.deleteFabric(fabricsTable.getSelectionModel().getSelectedItem());
-            updateTables();
+    void deleteFabric() {
+        Fabric selectedFabric = fabricsTable.getSelectionModel().getSelectedItem();
+        if(selectedFabric != null){
+            if (confirmDelete("Delete Fabric?", "Are you sure you want to delete this fabric?\nThis action is irreversible!")) {
+                DatabaseManager.deleteFabric(selectedFabric);
+                updateTables();
+            }
+        }else{
+            alertNoSelection("Fabric", " fabric");
         }
     }
 
     @FXML
-    void deleteModel(ActionEvent event){
-        if (confirmDelete("Delete model?", "Are you sure you want to delete this model?\nThis action is irreversible!")) {
-            DatabaseManager.deleteModel(modelsTable.getSelectionModel().getSelectedItem());
-            updateTables();
+    void deleteModel(){
+        Model selectedModel =modelsTable.getSelectionModel().getSelectedItem();
+        if(selectedModel != null){
+            if (confirmDelete("Delete model?", "Are you sure you want to delete this model?\nThis action is irreversible!")) {
+                DatabaseManager.deleteModel(selectedModel);
+                updateTables();
+            }
+        }else{
+            alertNoSelection("Model", " model");
         }
     }
 
     @FXML
-    void deletePiece(ActionEvent event) {
-        if (confirmDelete("Delete Piece?", "Are you sure you want to delete this piece?\nThis action is irreversible!")) {
-            DatabaseManager.deletePiece(piecesTable.getSelectionModel().getSelectedItem());
-            updateTables();
+    void deletePiece() {
+        Piece selectedPiece = piecesTable.getSelectionModel().getSelectedItem();
+        if(selectedPiece != null){
+            if (confirmDelete("Delete Piece?", "Are you sure you want to delete this piece?\nThis action is irreversible!")) {
+                DatabaseManager.deletePiece(selectedPiece);
+                updateTables();
+            }
+        }else{
+            alertNoSelection("Piece", " piece");
         }
     }
 
@@ -175,6 +205,14 @@ public class MainController implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
 
         return result.isPresent() && result.get() == ButtonType.OK;
+    }
+
+    private void alertNoSelection(String title, String content){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("No " + title + " selected!");
+        alert.setContentText("Please, select a" + content + ".");
+        alert.setHeaderText(alert.getTitle());
+        Optional<ButtonType> result = alert.showAndWait();
     }
     //endregion
 
@@ -220,7 +258,8 @@ public class MainController implements Initializable {
 
     @FXML
     void viewOrder(ActionEvent event){
-
+        CurrentSessionSingleton.getInstance().selectedTableIndex = ordersTable.getSelectionModel().getSelectedIndex();
+        AtelieManagerApplication.swapToViewOrder();
     }
 
     @FXML
@@ -253,18 +292,20 @@ public class MainController implements Initializable {
     void printOrder(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
-        try{
-            //Pega a referencia do pedido selecionado;
-            Order selectedOrder = ordersTable.getSelectionModel().getSelectedItem();
+        //Pega a referencia do pedido selecionado;
+        Order selectedOrder = ordersTable.getSelectionModel().getSelectedItem();
 
-            //TODO que porra eu chamo aqui?? Tem um printOrder(Order order) em algum lugar?
+        if(selectedOrder != null){
 
-            alert.setTitle("Order printed Successfully");
+            //TODO Eu coloquei essa função no DB manager pois é a unica interface que eu tenho do meu codigo pro seu. Se quiser deixar nele essa função tb, vc q sabe.
+            DatabaseManager.printOrder(selectedOrder);
+
+            alert.setTitle("Order printed Successfully!");
             alert.setContentText("");
             alert.setHeaderText(alert.getTitle());
             alert.showAndWait();
-        }catch (IndexOutOfBoundsException exception){
-            alert.setTitle("No Order Selecter");
+        }else{
+            alert.setTitle("No Order Selected!");
             alert.setContentText("Please, select an Order.");
             alert.setHeaderText(alert.getTitle());
             alert.showAndWait();

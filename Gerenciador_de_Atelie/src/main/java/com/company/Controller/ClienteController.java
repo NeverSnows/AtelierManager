@@ -8,7 +8,11 @@ import java.util.List;
 public class ClienteController {
     private static ClienteDAO cd = new ClienteDAO();
     public static void insereCliente(Customer customer){
-        cd.inserir(customer);
+        cd.atualizar(customer);
+    }
+
+    public static void deletaCliente(Customer customer){
+        cd.deletar(customer);
     }
 
     public static List<Customer> retornaClientes(){

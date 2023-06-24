@@ -24,12 +24,17 @@ public class AtelieManagerApplication extends Application {
     private static Scene newPieceScene;
     private static Scene newFabricScene;
     private static Scene registerCustomerScene;
+    private static Scene escalateEstimateScene;
+    private static Scene recoveryEmailScene;
+    private static Scene recoveryCodeScene;
+    private static Scene recoverPasswordScene;
 
     private static Scene viewFabricScene;
     private static Scene viewCustomerScene;
     private static Scene viewPieceScene;
     private static Scene viewModelScene;
     private static Scene viewEstimateScene;
+    private static Scene viewOrderScene;
 
     private static MainController mainController;
     private static ViewFabricController viewFabricController;
@@ -37,6 +42,8 @@ public class AtelieManagerApplication extends Application {
     private static ViewPieceController viewPieceController;
     private static ViewModelController viewModelController;
     private static ViewEstimateController viewEstimateController;
+    private static ViewOrderController viewOrderController;
+    private static EscalateEstimateController escalateEstimateController;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -61,12 +68,16 @@ public class AtelieManagerApplication extends Application {
         FXMLLoader signInFxmlLoader = new FXMLLoader(AtelieManagerApplication.class.getResource("sign_in-view.fxml"));
         FXMLLoader mainFxmlLoader = new FXMLLoader(AtelieManagerApplication.class.getResource("main-view.fxml"));
 
-        //New FXML Loaders
+        //Other FXML Loaders
         FXMLLoader newEstimateFxmlLoader = new FXMLLoader(AtelieManagerApplication.class.getResource("new_estimate-view.fxml"));
         FXMLLoader newModelFxmlLoader = new FXMLLoader(AtelieManagerApplication.class.getResource("new_model-view.fxml"));
         FXMLLoader newPieceFxmlLoader = new FXMLLoader(AtelieManagerApplication.class.getResource("new_piece-view.fxml"));
         FXMLLoader newFabricFxmlLoader = new FXMLLoader(AtelieManagerApplication.class.getResource("new_fabric-view.fxml"));
         FXMLLoader registerCustomerFxmlLoader = new FXMLLoader(AtelieManagerApplication.class.getResource("register_customer-view.fxml"));
+        FXMLLoader escalateEstimateFxmlLoader = new FXMLLoader(AtelieManagerApplication.class.getResource("escalate_estimate-view.fxml"));
+        FXMLLoader recoveryEmailFxmlLoader = new FXMLLoader(AtelieManagerApplication.class.getResource("recovery_email-view.fxml"));
+        FXMLLoader recoveryCodeFxmlLoader = new FXMLLoader(AtelieManagerApplication.class.getResource("recovery_code-view.fxml"));
+        FXMLLoader recoverPasswordFxmlLoader = new FXMLLoader(AtelieManagerApplication.class.getResource("recover_password-view.fxml"));
 
         //View and Edit FXML Loaders
         FXMLLoader viewFabricFxmlLoader = new FXMLLoader(AtelieManagerApplication.class.getResource("view_fabric-view.fxml"));
@@ -74,6 +85,7 @@ public class AtelieManagerApplication extends Application {
         FXMLLoader viewPieceFxmlLoader = new FXMLLoader(AtelieManagerApplication.class.getResource("view_piece-view.fxml"));
         FXMLLoader viewModelFxmlLoader = new FXMLLoader(AtelieManagerApplication.class.getResource("view_model-view.fxml"));
         FXMLLoader viewEstimateFxmlLoader = new FXMLLoader(AtelieManagerApplication.class.getResource("view_estimate-view.fxml"));
+        FXMLLoader viewOrderFxmlLoader = new FXMLLoader(AtelieManagerApplication.class.getResource("view_order-view.fxml"));
         //endregion
 
         //region Scenes
@@ -82,12 +94,16 @@ public class AtelieManagerApplication extends Application {
         signInScene = new Scene(signInFxmlLoader.load());
         loginScene = new Scene(logInFxmlLoader.load());
 
-        //New Scenes
+        //Other Scenes
         newEstimateScene = new Scene(newEstimateFxmlLoader.load());
         newModelScene = new Scene(newModelFxmlLoader.load());
         newPieceScene = new Scene(newPieceFxmlLoader.load());
         newFabricScene = new Scene(newFabricFxmlLoader.load());
         registerCustomerScene = new Scene(registerCustomerFxmlLoader.load());
+        escalateEstimateScene = new Scene(escalateEstimateFxmlLoader.load());
+        recoveryEmailScene = new Scene(recoveryEmailFxmlLoader.load());
+        recoveryCodeScene = new Scene(recoveryCodeFxmlLoader.load());
+        recoverPasswordScene = new Scene(recoverPasswordFxmlLoader.load());
 
         //View Scenes
         viewFabricScene = new Scene(viewFabricFxmlLoader.load());
@@ -95,15 +111,18 @@ public class AtelieManagerApplication extends Application {
         viewPieceScene = new Scene(viewPieceFxmlLoader.load());
         viewModelScene = new Scene(viewModelFxmlLoader.load());
         viewEstimateScene = new Scene(viewEstimateFxmlLoader.load());
+        viewOrderScene = new Scene(viewOrderFxmlLoader.load());
         //endregion
 
         //region Controllers
         mainController = mainFxmlLoader.getController();
+        escalateEstimateController = escalateEstimateFxmlLoader.getController();
         viewFabricController = viewFabricFxmlLoader.getController();
         viewCustomerController = viewCustomerxmlLoader.getController();
         viewPieceController = viewPieceFxmlLoader.getController();
         viewModelController = viewModelFxmlLoader.getController();
         viewEstimateController = viewEstimateFxmlLoader.getController();
+        viewOrderController = viewOrderFxmlLoader.getController();
         //endregion
     }
 
@@ -136,7 +155,15 @@ public class AtelieManagerApplication extends Application {
     public static void swapToRegisterCustomer(){
         mainStage.setScene(registerCustomerScene);
     }
+    public static void swapToRecoveryEmail(){
+        mainStage.setScene(recoveryEmailScene);
+    }
+    public static void swapToRecoveryCode(){
+        mainStage.setScene(recoveryCodeScene);
+    }
+    public static void swapToRecoverPassword(){mainStage.setScene(recoverPasswordScene);}
 
+    //region View and Edit
     public static void swapToViewCustomer(){
         try{
             viewCustomerController.updateCustomerInfo();
@@ -180,14 +207,24 @@ public class AtelieManagerApplication extends Application {
             alertSelectionNull("No Estimate Selected!", "Please, select an estimate.");
         }
     }
+    public static void swapToViewOrder(){
+        try{
+            viewOrderController.updateOrderInfo();
+            mainStage.setScene(viewOrderScene);
+        }catch (IndexOutOfBoundsException exception){
+            alertSelectionNull("No Order Selected!", "Please, select an order.");
+        }
+    }
 
     public static void swapToEscalateEstimate(){
         try{
-
+            escalateEstimateController.updateEstimateInfo();
+            mainStage.setScene(escalateEstimateScene);
         }catch (IndexOutOfBoundsException exception){
             alertSelectionNull("No Estimate Selected!", "Please, select an estimate.");
         }
     }
+
 
     private static void alertSelectionNull(String title, String textContent){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

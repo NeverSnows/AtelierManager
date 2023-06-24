@@ -66,12 +66,18 @@ public class NewPieceController implements Initializable{
         List<MeasurePeca> measures = measureComboBox.getItems().stream().toList();
         Model model = modelComboBox.getSelectionModel().getSelectedItem();
 
+
         if(!name.isBlank() && !price.isBlank() && !measures.isEmpty() && model != null){
             try{
                 priceTextField.setText("");
                 double priceDouble = Double.parseDouble(price);
 
                 Piece piece = new Piece(name, priceDouble, measures, model);
+
+                for (MeasurePeca measure : measures) {
+                    measure.setPiece(piece);
+                }
+
                 DatabaseManager.registerPiece(piece);
                 measureComboBox.setItems(null);
                 nameTextField.setText("");
@@ -90,7 +96,7 @@ public class NewPieceController implements Initializable{
         modelComboBox.setConverter(new StringConverter<Model>() {
             @Override
             public String toString(Model model) {
-                return model.getNome();
+                return model.getName();
             }
 
             @Override

@@ -14,16 +14,16 @@ public class TecidoController extends GenericController<Fabric>{
     private static TecidoDAO td = new TecidoDAO();
 
     public static void insereTecido(Fabric fabric){
-        td.inserir(fabric);
+        td.atualizar(fabric);
     }
 
     public static List<Fabric> retornaTecidos(){
         return td.buscarTodos();
     }
 
-    public static void main(String[] args) {
-        Fabric fabric = new Fabric(5l,"courino", 10.00);
-
+    public static void deletaTecido(Fabric fabric){
+        td.deletar(fabric);
     }
+
 
 }

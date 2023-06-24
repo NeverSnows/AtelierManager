@@ -81,9 +81,9 @@ public class ViewPieceController implements Initializable {
                 Optional<ButtonType> result = alert.showAndWait();
                 if(result.isPresent() && result.get() == ButtonType.OK){
                     selectedPiece.setName(name);
-                    selectedPiece.setPrecoBase(priceDouble);
-                    selectedPiece.setModelo(model);
-                    selectedPiece.setMedidas(measures);
+                    selectedPiece.setValue(priceDouble);
+                    selectedPiece.setModel(model);
+                    selectedPiece.setMeasures(measures);
 
                     DatabaseManager.registerPiece(selectedPiece);
                     AtelieManagerApplication.swapToMain();
@@ -100,10 +100,10 @@ public class ViewPieceController implements Initializable {
     public void updatePieceInfo() throws IndexOutOfBoundsException{
         Piece selectedPiece = CurrentSessionSingleton.getInstance().observablePieces.get(CurrentSessionSingleton.getInstance().selectedTableIndex);
         nameTextField.setText(selectedPiece.getName());
-        priceTextField.setText(String.valueOf(selectedPiece.getPrecoBase()));
+        priceTextField.setText(String.valueOf(selectedPiece.getValue()));
         modelComboBox.setItems(CurrentSessionSingleton.getInstance().observableModels);
-        modelComboBox.setValue(selectedPiece.getModelo());
-        measureComboBox.setItems(FXCollections.observableArrayList(selectedPiece.getMedidas()));
+        modelComboBox.setValue(selectedPiece.getModel());
+        measureComboBox.setItems(FXCollections.observableArrayList(selectedPiece.getMeasures()));
     }
 
     @Override
@@ -122,7 +122,7 @@ public class ViewPieceController implements Initializable {
         modelComboBox.setConverter(new StringConverter<Model>() {
             @Override
             public String toString(Model model) {
-                return model.getNome();
+                return model.getName();
             }
 
             @Override

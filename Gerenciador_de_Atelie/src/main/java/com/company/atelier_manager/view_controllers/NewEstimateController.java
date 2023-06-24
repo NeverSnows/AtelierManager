@@ -96,6 +96,10 @@ public class NewEstimateController implements Initializable {
                 obs = "No Observations";
             }
             Estimate estimate = new Estimate(CurrentSessionSingleton.getInstance().loggedUser, customer, new Date(), items, obs);
+
+            for (OrderItem orderItem : items) {
+                orderItem.setEstimate(estimate);
+            }
             DatabaseManager.registerEstimate(estimate);
         }
         itemsComboBox.setItems(null);
@@ -134,7 +138,7 @@ public class NewEstimateController implements Initializable {
             totalValueField.setText("0.00");
         }else{
             for(OrderItem item : itemsComboBox.getItems()){
-                outputSum += item.getValorItem();
+                outputSum += item.getTotalPrice();
             }
             totalValueField.setText(String.valueOf(outputSum));
         }
@@ -145,7 +149,7 @@ public class NewEstimateController implements Initializable {
         customerComboBox.setConverter(new StringConverter<Customer>() {
             @Override
             public String toString(Customer customer) {
-                return customer.getNome();
+                return customer.getName();
             }
 
             @Override
@@ -179,7 +183,7 @@ public class NewEstimateController implements Initializable {
         fabricComboBox.setConverter(new StringConverter<Fabric>() {
             @Override
             public String toString(Fabric fabric) {
-                return fabric.getNome();
+                return fabric.getName();
             }
 
             @Override
@@ -201,7 +205,7 @@ public class NewEstimateController implements Initializable {
         extraRequirementComboBox.setConverter(new StringConverter<ExtraRequirement>() {
             @Override
             public String toString(ExtraRequirement extraRequirement) {
-                return extraRequirement.getNome() + ": " + extraRequirement.getValorAdicional();
+                return extraRequirement.getName() + ": " + extraRequirement.getValue();
             }
 
             @Override
@@ -212,7 +216,7 @@ public class NewEstimateController implements Initializable {
         itemsComboBox.setConverter(new StringConverter<OrderItem>() {
             @Override
             public String toString(OrderItem orderItem) {
-                return "Item Piece: " + orderItem.getPeca().getName();
+                return "Item Piece: " + orderItem.getPiece().getName();
             }
 
             @Override

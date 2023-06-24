@@ -12,7 +12,7 @@ import java.util.List;
 public class UsuarioDAO extends GenericDAO<User>{
     public static boolean inserirr(User user){
 
-        user.setSenhaUsuario(CriptografiaDeSenha.encriptaSenha(user.getSenhaUsuario()));
+        user.setPasword(CriptografiaDeSenha.encriptaSenha(user.getPasword()));
         try {
             EntityManager.getEM().getTransaction().begin();
             EntityManager.getEM().persist(user);
@@ -47,12 +47,12 @@ public class UsuarioDAO extends GenericDAO<User>{
 
     }
 
-    public static User retornarUsuarioPorEmailESenha(String email, String senha) {
+    public static User retornarUsuarioPorEmailESenha(String email, String pasword) {
         TypedQuery<User> instrucaoSQL = EntityManager.getEM().createQuery(
-                "SELECT u FROM User u WHERE u.emailUsuario = :email AND u.senhaUsuario = :senha",
+                "SELECT u FROM User u WHERE u.email = :email AND u.pasword = :pasword",
                 User.class);
         instrucaoSQL.setParameter("email", email);
-        instrucaoSQL.setParameter("senha", senha);
+        instrucaoSQL.setParameter("pasword", pasword);
 
         try {
             return instrucaoSQL.getSingleResult();
@@ -61,12 +61,12 @@ public class UsuarioDAO extends GenericDAO<User>{
         }
     }
 
-    public static boolean retornarUsuarioPorEmailESenhaBool(String email, String senha) {
+    public static boolean retornarUsuarioPorEmailESenhaBool(String email, String pasword) {
         TypedQuery<User> instrucaoSQL = EntityManager.getEM().createQuery(
-                "SELECT u FROM User u WHERE u.emailUsuario = :email AND u.senhaUsuario = :senha",
+                "SELECT u FROM User u WHERE u.email = :email AND u.pasword = :pasword",
                 User.class);
         instrucaoSQL.setParameter("email", email);
-        instrucaoSQL.setParameter("senha", senha);
+        instrucaoSQL.setParameter("pasword", pasword);
 
 
         try {
@@ -79,7 +79,7 @@ public class UsuarioDAO extends GenericDAO<User>{
 
     public static User retornarUsuarioPorEmail(String email) {
         TypedQuery<User> instrucaoSQL = EntityManager.getEM().createQuery(
-                "SELECT u FROM User u WHERE u.emailUsuario = :email",
+                "SELECT u FROM User u WHERE u.email = :email",
                 User.class);
         instrucaoSQL.setParameter("email", email);
 
@@ -94,8 +94,8 @@ public class UsuarioDAO extends GenericDAO<User>{
         String senhaCriptografada = CriptografiaDeSenha.encriptaSenha(novaSenha);
 
         EntityManager.getEM().getTransaction().begin();
-        Query query = EntityManager.getEM().createNativeQuery("UPDATE User SET senhaUsuario = :senha WHERE emailUsuario = :email");
-        query.setParameter("senha", senhaCriptografada);
+        Query query = EntityManager.getEM().createNativeQuery("UPDATE User SET pasword = :pasword WHERE email = :email");
+        query.setParameter("pasword", senhaCriptografada);
         query.setParameter("email", email);
         query.executeUpdate();
         EntityManager.getEM().getTransaction().commit();

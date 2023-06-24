@@ -5,148 +5,115 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8fe37a1-ad24-452e-800d-71fd31deb106" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/ClienteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/ModeloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/OrcamentoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/PecaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/CurrentSessionSingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/NewEstimateController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/ViewCustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/ViewEstimateController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/ViewModelController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/ViewPieceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/ModeloDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/escalate_estimate-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/view_customer-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/view_estimate-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/view_model-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/view_piece-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/EscalateEstimateController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/RecoverPasswordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/RecoveryCodeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/RecoveryEmailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/ViewOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Util/OrderReportGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/recover_password-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/recovery_code-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/recovery_email-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/view_order-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Controller/CodigosVerificacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/CodigosVerificacaoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Controller/ModeloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/ModeloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Controller/OrcamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/OrcamentoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Controller/PecaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/PecaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/PedidoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Controller/TecidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/TecidoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Controller/UsuarioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/AtelieManagerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/AtelieManagerApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/DatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/Estimate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/Estimatee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/ExtraRequirement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/ExtraRequirementt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/Fabric.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/Measure.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/Model.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/Orderr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/OrderItemm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/Piece.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/enums/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/OrderStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/enums/Size.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/structure/enums/PaymentOption.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/NewFabricController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/NewFabricController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/NewModelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/NewModelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/NewEstimateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/NewEstimateController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/NewPieceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/NewPieceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/RegisterCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/RegisterCustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/SignInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/SignInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/ViewCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/ViewCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/ViewEstimateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/ViewEstimateController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/ViewFabricController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/ViewFabricController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/ViewModelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/ViewModelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/ViewPieceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/atelier_manager/view_controllers/ViewPieceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/AdicionalDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/AdicionalDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/ClienteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/CodigosVerificacaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/CodigosVerificacaoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/EntityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/EntityManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/GenericDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/GenericDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/ItemPedidoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/ItemPedidoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/MedidaClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/MedidaClienteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/MedidaPecaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/MedidaPecaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/OrcamentoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/OrcamentoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/PecaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/PecaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/PedidoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/PedidoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/TecidoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/TecidoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dao/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dao/UsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Adicional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/ExtraRequirement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/ItemPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Medida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Measure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/MedidaCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/MeasureCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/MedidaPeca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/MeasurePeca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Orcamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Estimate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Peca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Situacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Situacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Tamanho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Size.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Tecido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Fabric.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/TipoPagamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/TipoPagamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Util/CodigosVerificacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Util/CodigosVerificacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Util/DispararEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Util/DispararEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Estimate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Estimate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/ExtraRequirement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/ExtraRequirement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Fabric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Fabric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/MeasureCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/MeasureCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/MeasurePeca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/MeasurePeca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Situacao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/Size.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/TipoPagamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/PaymentOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/escalate_estimate-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/escalate_estimate-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/main-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/new_estimate-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/new_estimate-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/new_piece-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/new_piece-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/view_fabric-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/company/atelier_manager/view_fabric-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Controller/ClienteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Controller/ModeloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Controller/ModeloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Controller/OrcamentoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Controller/OrcamentoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Controller/PecaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Controller/PecaController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/Controller/PedidoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Controller/PedidoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/Controller/TecidoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Controller/TecidoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/Controller/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Controller/UsuarioController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/AtelieManagerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/AtelieManagerApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/DatabaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/DatabaseManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/escalate_estimate-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/escalate_estimate-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/main-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/new_estimate-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/new_estimate-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/new_piece-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/new_piece-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/structure/Customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/structure/Estimate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/structure/ExtraRequirement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/structure/Fabric.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/structure/Measure.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/structure/Model.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/structure/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/structure/OrderItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/structure/Piece.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/structure/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/structure/enums/OrderStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/structure/enums/Size.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/LogInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/LogInController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/structure/enums/PaymentOption.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewFabricController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewFabricController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewModelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewModelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewEstimateController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewEstimateController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewEstimateController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewEstimateController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewEstimateController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewEstimateController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewEstimateController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewEstimateController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewEstimateController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewEstimateController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewEstimateController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewEstimateController$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewEstimateController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewEstimateController$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewEstimateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewEstimateController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewPieceController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewPieceController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewPieceController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewPieceController$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewPieceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/NewPieceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/RegisterCustomerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/RegisterCustomerController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/RegisterCustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/RegisterCustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/SignInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/SignInController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewCustomerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewCustomerController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewCustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewCustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewEstimateController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewEstimateController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewEstimateController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewEstimateController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewEstimateController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewEstimateController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewEstimateController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewEstimateController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewEstimateController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewEstimateController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewEstimateController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewEstimateController$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewEstimateController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewEstimateController$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewEstimateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewEstimateController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewFabricController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewFabricController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_fabric-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_fabric-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewModelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewModelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewPieceController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewPieceController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewPieceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/atelier_manager/view_controllers/ViewPieceController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/AdicionalDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/AdicionalDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/ClienteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/ClienteDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/CodigosVerificacaoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/CodigosVerificacaoDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/EntityManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/EntityManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/GenericDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/GenericDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/ItemPedidoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/ItemPedidoDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/MedidaClienteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/MedidaClienteDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/MedidaPecaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/MedidaPecaDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/OrcamentoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/OrcamentoDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/PecaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/PecaDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/PedidoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/PedidoDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/TecidoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/TecidoDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/dao/UsuarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Adicional.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Cliente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/ItemPedido.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Medida.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/MedidaCliente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/MedidaPeca.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Modelo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Orcamento.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Peca.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Pedido.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Situacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Situacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Tamanho.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Tecido.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/TipoPagamento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/TipoPagamento.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Usuario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Util/DispararEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Util/DispararEmail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Estimate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Estimate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/ExtraRequirement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/ExtraRequirement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Fabric.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Fabric.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/MeasureCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/MeasureCliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/MeasurePeca.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/MeasurePeca.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/OrderItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/OrderItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Piece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Situacao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/Size.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/Size.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/TipoPagamento.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,8 +159,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Raissa/IdeaProjects/Trabalho2/AtelierManager/Gerenciador_de_Atelie/src/main/resources/com/company",
-    "project.structure.last.edited": "Libraries",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/Users/Raissa/IdeaProjects/Trabalho2 - Copia/AtelierManager/Gerenciador_de_Atelie",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.13867188",
     "project.structure.side.proportion": "0.498708",
     "settings.editor.selected.configurable": "configurable.group.appearance"
@@ -202,6 +170,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Raissa\IdeaProjects\Trabalho2\AtelierManager\Gerenciador_de_Atelie\src\main\resources\com\company" />
+      <recent name="C:\Users\Raissa\IdeaProjects\Trabalho2\AtelierManager\Gerenciador_de_Atelie\src\main\java\com\company\atelier_manager\view_controllers" />
       <recent name="C:\Users\Raissa\IdeaProjects\Trabalho2\AtelierManager\Gerenciador_de_Atelie\src\main\java\com\company\atelier_manager" />
       <recent name="C:\Users\Raissa\IdeaProjects\Trabalho2\AtelierManager\Gerenciador_de_Atelie\src\main\resources\com\company\atelier_manager" />
       <recent name="C:\Users\Raissa\IdeaProjects\Trabalho2\AtelierManager\Gerenciador_de_Atelie\src\main\java\com\company" />
@@ -213,6 +182,26 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.company.model" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="AtelieManagerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.atelier_manager.AtelieManagerApplication" />
+      <module name="AtelierManager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.atelier_manager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AtelieManagerApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -247,16 +236,19 @@
           <line>34</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/company/model/ExtraRequirement.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.hibernate.AnnotationException" package="org.hibernate" />
           <option name="timeStamp" value="10" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/com/company/model/Piece.java</url>
-          <line>10</line>
-          <properties field="id" class="com.company.model.Piece" />
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassCastException" package="java.lang" />
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

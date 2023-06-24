@@ -8,13 +8,13 @@ import com.company.model.Util.CriptografiaDeSenha;
 import com.company.model.Util.DispararEmail;
 
 public class UsuarioController {
-    UsuarioDAO ud = new UsuarioDAO();
+    private static UsuarioDAO ud = new UsuarioDAO();
 
     public static boolean verificarCredenciais(String email, String senha) {
         String senhaCriptografada = CriptografiaDeSenha.encriptaSenha(senha);
         User user = UsuarioDAO.retornarUsuarioPorEmailESenha(email, senhaCriptografada);
 
-        if (user != null && user.getEmailUsuario().equals(email) && user.getSenhaUsuario().equals(senhaCriptografada)) {
+        if (user != null && user.getEmail().equals(email) && user.getPasword().equals(senhaCriptografada)) {
             return true;
         } else {
             System.out.println("Não foi possível fazer a validação");
@@ -25,7 +25,7 @@ public class UsuarioController {
     public static boolean validaEmail(String email){
         User user = UsuarioDAO.retornarUsuarioPorEmail(email);
         try{
-            return user.getEmailUsuario().equals(email);
+            return user.getEmail().equals(email);
         }
         catch (NullPointerException npe){
             System.out.println("Usuario não cadastrado");
@@ -33,7 +33,7 @@ public class UsuarioController {
         return false;
     }
 
-    public void enviaCodigoVerificacao(String email){
+    public static void enviaCodigoVerificacao(String email){
         if(validaEmail(email)){
             CodigosVerificacaoController cvc = new CodigosVerificacaoController();
             CodigosVerificacao codigo = cvc.criarCodigoVerificacao(email);
@@ -47,16 +47,16 @@ public class UsuarioController {
         }
     }
 
-    public void cadastraNovoUsuario(String nomeUsuario, String emailUsuario, String senha){
+    public static void cadastraNovoUsuario(String nomeUsuario, String emailUsuario, String senha){
         if(!validaEmail(emailUsuario)){
             User user = new User(nomeUsuario, emailUsuario, senha);
-            ud.inserir(user);
+            ud.atualizar(user);
         }
         else{
             System.out.println("Já cadastrado");
         }
     }
-    public void alterarSenha(String email, String novaSenha) {
+    public static void alterarSenha(String email, String novaSenha) {
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         CodigosVerificacaoDAO codigoDAO = new CodigosVerificacaoDAO();
 
@@ -76,8 +76,8 @@ public class UsuarioController {
 
 
        // uc.enviaCodigoVerificacao("raissalagess@gmail.com");
-       if(cvd.validaCodigoVerificacao("23217312"))
-            uc.alterarSenha("raissalagess@gmail.com", "afgrhgbaa");
+      // if(cvd.validaCodigoVerificacao("23217312"))
+           // uc.alterarSenha("raissalagess@gmail.com", "afgrhgbaa");
 
 
     }

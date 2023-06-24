@@ -1,12 +1,10 @@
 package com.company.model;
 
-import com.company.atelier_manager.structure.ExtraRequirementt;
-
 import javax.persistence.*;
 import java.util.List;
 @Entity
 @Table(name = "ItemPedido")
-public class OrderItem {
+public class OrderItem implements Identificavel{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,54 +22,60 @@ public class OrderItem {
     private Fabric fabric;
 
     @Column(name = "Cor")
-    private String cor;
+    private Color color;
 
     @OneToMany(mappedBy = "orderItem")
-    private List<ExtraRequirement> adicionais;
+    private List<ExtraRequirement> extraRequirements;
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public Estimate getEstimate() {
+        return estimate;
+    }
+
+    public void setEstimate(Estimate estimate) {
+        this.estimate = estimate;
+    }
+
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
 
     @ManyToOne
     @JoinColumn(name = "orcamento_id")
     private Estimate estimate;
 
     @Column(name = "valorItem")
-    private Double valorItem;
+    private Double totalPrice;
 
     public OrderItem() {
     }
-    public OrderItem(Piece piece, Size size, Fabric fabric, String cor,
-                     List<ExtraRequirement> adicionais, Estimate estimate, Double valorItem) {
-        this.piece = piece;
-        this.size = size;
-        this.fabric = fabric;
-        this.cor = cor;
-        this.adicionais = adicionais;
-        this.estimate = estimate;
-        this.valorItem = valorItem;
-    }
-    public OrderItem(Long id, Piece piece, Size size, Fabric fabric, String cor,
-                     List<ExtraRequirement> adicionais, Estimate estimate, Double valorItem) {
-        this.id = id;
-        this.piece = piece;
-        this.size = size;
-        this.fabric = fabric;
-        this.cor = cor;
-        this.adicionais = adicionais;
-        this.estimate = estimate;
-        this.valorItem = valorItem;
-    }
 
     public OrderItem(Piece piece, Size size, Fabric fabric, Color color, List<ExtraRequirement> extraRequirements) {
+        this.piece = piece;
+        this.size = size;
+        this.fabric = fabric;
+        this.color = color;
+        this.extraRequirements = extraRequirements;
+        updateTotalPrice();
     }
 
-    public void atualizarPrecoTotal(){
-        valorItem = 0.0;
-        valorItem += piece.getPrecoBase() + fabric.getPreco();
-        for(ExtraRequirement extraRequirement : adicionais)
-            valorItem += extraRequirement.getValorAdicional();
+    public void updateTotalPrice(){
+        totalPrice = 0.0;
+        totalPrice += piece.getValue();
+        totalPrice += fabric.getValue();
 
-        valorItem *= size.getMultiplicador();
+        for(ExtraRequirement extraRequirement : extraRequirements){
+            totalPrice += extraRequirement.getValue();
+        }
+        totalPrice *= size.getPriceMultiplier();
     }
-
     public Long getId() {
         return id;
     }
@@ -80,52 +84,46 @@ public class OrderItem {
         this.id = id;
     }
 
-    public Piece getPeca() {
+    public Piece getPiece() {
         return piece;
     }
 
-    public void setPeca(Piece piece) {
+    public void setPiece(Piece piece) {
         this.piece = piece;
-        atualizarPrecoTotal();
+        updateTotalPrice();
     }
 
-    public Size getTamanho() {
+    public Size getSize() {
         return size;
     }
 
-    public void setTamanho(Size size) {
+    public void setSize(Size size) {
         this.size = size;
-        atualizarPrecoTotal();
+        updateTotalPrice();
     }
 
-    public Fabric getTecido() {
+    public Fabric getFabric() {
         return fabric;
     }
 
-    public void setTecido(Fabric fabric) {
+    public void setFabric(Fabric fabric) {
         this.fabric = fabric;
-        atualizarPrecoTotal();
+        updateTotalPrice();
     }
 
-    public List<ExtraRequirement> getAdicionais() {
-        atualizarPrecoTotal();
-        return adicionais;
+    public List<ExtraRequirement> getExtraRequirements() {
+        updateTotalPrice();
+        return extraRequirements;
     }
 
-    public void setAdicionais(List<ExtraRequirement> adicionais) {
-        this.adicionais = adicionais;
-        atualizarPrecoTotal();
+    public void setExtraRequirements(List<ExtraRequirement> extraRequirements) {
+        this.extraRequirements = extraRequirements;
+        updateTotalPrice();
     }
 
-    public Double getValorItem() {
-        return valorItem;
+    public Double getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setValorItem(Double valorItem) {
-        this.valorItem = valorItem;
-    }
 
-    public Double calculaValorItem(){
-       return this.piece.getPrecoBase() + this.fabric.getPreco() ;
-    }
 }

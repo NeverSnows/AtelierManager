@@ -6,7 +6,7 @@ import java.util.List;
 @Entity
 @Table(name = "Orcamento")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Estimate {
+public class Estimate implements Identificavel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -15,101 +15,101 @@ public class Estimate {
     private User user;
     @ManyToOne
     private Customer customer;
-    private Date dataCriacao;
-    @OneToMany(mappedBy = "estimate")
+    private Date date;
+    @OneToMany(mappedBy = "estimate", cascade = CascadeType.ALL)
 
-    private List<OrderItem> itensPedido;
-    private Double valorTotal;
-    private String observacoes;
+    private List<OrderItem> orderItems;
+    private Double totalPrice;
+    private String observations;
 
     public Estimate(){}
 
-    public Estimate(User user, Customer customer, Date dataCriacao,
-                    List<OrderItem> itensPedido, String observacoes) {
+    public Estimate(User user, Customer customer, Date date,
+                    List<OrderItem> orderItems, String observations) {
         this.user = user;
         this.customer = customer;
-        this.dataCriacao = dataCriacao;
-        this.itensPedido = itensPedido;
-        this.observacoes = observacoes;
-        atualizarPrecoTotal();
+        this.date = date;
+        this.orderItems = orderItems;
+        this.observations = observations;
+        updateTotalPrice();
     }
 
-    public Estimate(Long id, User user, Customer customer, Date dataCriacao,
-                    List<OrderItem> itensPedido, String observacoes) {
+    public Estimate(Long id, User user, Customer customer, Date date, List<OrderItem> orderItems, String observations) {
         this.id = id;
         this.user = user;
         this.customer = customer;
-        this.dataCriacao = dataCriacao;
-        this.itensPedido = itensPedido;
-        this.observacoes = observacoes;
-        atualizarPrecoTotal();
+        this.date = date;
+        this.orderItems = orderItems;
+        this.observations = observations;
+        updateTotalPrice();
     }
 
-    public Estimate(Long id, User usuario, Customer cliente, Date dataCriacao, List<OrderItem> itensPedido, Double valorTotal, String observacoes) {
-    }
 
-    private void atualizarPrecoTotal(){
-        valorTotal = 0.0;
-        for(OrderItem orderItem : itensPedido)
-            valorTotal += orderItem.getValorItem();
+
+    private void updateTotalPrice(){
+        totalPrice = 0.0;
+        for(OrderItem orderItem : orderItems){
+            totalPrice += orderItem.getTotalPrice();
+        }
     }
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public User getUsuario() {
+    public User getUser() {
         return user;
     }
 
-    public void setUsuario(User user) {
+    public Date getDate() {
+        return date;
+    }
+
+    //Novamente, getter atualisa o preço total, pois a referencia a lsita de itens enviada pelo getter pode ser alterada com .add() e .remove().
+    public List<OrderItem> getOrderItems() {
+        updateTotalPrice();
+        return orderItems;
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public String getObservations() {
+        return observations;
+    }
+
+    public void setUser(User user) {
         this.user = user;
     }
 
-    public Customer getCliente() {
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public void setOrderItems(List<OrderItem> orderItems) {
+        this.orderItems = orderItems;
+        updateTotalPrice();
+    }
+
+    public void setObservations(String observations) {
+        this.observations = observations;
+    }
+
+    public Customer getCustomer() {
         return customer;
     }
 
-    public void setCliente(Customer customer) {
+    public void setCustomer(Customer customer) {
         this.customer = customer;
     }
 
-    public Date getDataCriacao() {
-        return dataCriacao;
+    //Funções de interface abaixo
+    public String getCustomerName(){
+        return customer.getName();
     }
 
-    public void setDataCriacao(Date dataCriacao) {
-        this.dataCriacao = dataCriacao;
-    }
-
-    public List<OrderItem> getItensPedido() {
-        atualizarPrecoTotal();
-        return itensPedido;
-    }
-
-    public void setItensPedido(List<OrderItem> itensPedido) {
-        this.itensPedido = itensPedido;
-        atualizarPrecoTotal();
-
-    }
-
-    public Double getValorTotal() {
-        return valorTotal;
-    }
-
-    public void setValorTotal(Double valorTotal) {
-        this.valorTotal = valorTotal;
-    }
-
-    public String getObservacoes() {
-        return observacoes;
-    }
-
-    public void setObservacoes(String observacoes) {
-        this.observacoes = observacoes;
+    public String getUserName(){
+        return user.getName();
     }
 }

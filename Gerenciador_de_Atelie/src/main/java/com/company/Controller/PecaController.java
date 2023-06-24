@@ -9,7 +9,7 @@ public class PecaController {
     private static PecaDAO pd = new PecaDAO();
 
     public static void inserePeca(Piece piece){
-        pd.inserir(piece);
+        pd.atualizar(piece);
     }
 
     public static List<Piece> retornaPecas(){

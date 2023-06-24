@@ -8,13 +8,13 @@ public enum Size {
     GG(1.08),
     EXGG(1.10);
 
-    Size(double multiplicador) {
-        this.multiplicador = multiplicador;
+    Size(double priceMultiplier) {
+        this.priceMultiplier = priceMultiplier;
     }
-    private double multiplicador;
+    private final double priceMultiplier;
 
 
-    public double getMultiplicador() {
-        return multiplicador;
+    public double getPriceMultiplier() {
+        return priceMultiplier;
     }
 }

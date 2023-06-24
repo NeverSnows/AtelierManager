@@ -37,8 +37,8 @@ public class ViewModelController {
                 double priceDouble = Double.parseDouble(price);
                 Optional<ButtonType> result = alert.showAndWait();
                 if(result.isPresent() && result.get() == ButtonType.OK){
-                    selectedModel.setNome(name);
-                    selectedModel.setPreco(priceDouble);
+                    selectedModel.setName(name);
+                    selectedModel.setValue(priceDouble);
 
                     DatabaseManager.registerModel(selectedModel);
                     AtelieManagerApplication.swapToMain();
@@ -54,7 +54,7 @@ public class ViewModelController {
 
     public void updateModelInfo() throws IndexOutOfBoundsException{
         Model selectedModel = CurrentSessionSingleton.getInstance().observableModels.get(CurrentSessionSingleton.getInstance().selectedTableIndex);
-        nameTextField.setText(selectedModel.getNome());
-        priceTextField.setText(String.valueOf(selectedModel.getPreco()));
+        nameTextField.setText(selectedModel.getName());
+        priceTextField.setText(String.valueOf(selectedModel.getValue()));
     }
 }

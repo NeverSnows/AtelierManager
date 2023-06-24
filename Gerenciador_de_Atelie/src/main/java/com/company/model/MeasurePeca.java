@@ -9,6 +9,7 @@ public class MeasurePeca extends Measure {
     @JoinColumn(name = "peca_id")
     private Piece piece;
 
+    public MeasurePeca(){}
     public MeasurePeca(Piece piece) {
         this.piece = piece;
     }

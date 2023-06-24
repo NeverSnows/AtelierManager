@@ -6,30 +6,31 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "Usuario", uniqueConstraints = @UniqueConstraint(columnNames = {"emailUsuario"}))
-public class User implements Serializable {
+public class User implements Serializable, Identificavel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     @Column(name = "nomeUsuario")
-    private String nomeUsuario;
+    private String name;
     @Column(name = "emailUsuario")
-    private String emailUsuario;
+    private String email;
     @Column(name = "senhaUsuario")
-    private String senhaUsuario;
+    private String pasword;
 
     public User(){}
 
-    public User(Long id, String nomeUsuario, String emailUsuario, String senhaUsuario) {
+    public User(Long id, String name, String email, String pasword) {
         this.id = id;
-        this.nomeUsuario = nomeUsuario;
-        this.emailUsuario = emailUsuario;
-        this.senhaUsuario = senhaUsuario;
+        this.name = name;
+        this.email = email;
+        this.pasword = pasword;
     }
-    public User(String nomeUsuario, String emailUsuario, String senhaUsuario) {
-        this.nomeUsuario = nomeUsuario;
-        this.emailUsuario = emailUsuario;
-        this.senhaUsuario = senhaUsuario;
+    public User(String name, String email, String pasword) {
+        this.name = name;
+        this.email = email;
+        this.pasword = pasword;
     }
 
     public Long getId() {
@@ -40,28 +41,28 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getNomeUsuario() {
-        return nomeUsuario;
+    public String getName() {
+        return name;
     }
 
-    public void setNomeUsuario(String nomeUsuario) {
-        this.nomeUsuario = nomeUsuario;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getEmailUsuario() {
-        return emailUsuario;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmailUsuario(String emailUsuario) {
-        this.emailUsuario = emailUsuario;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getSenhaUsuario() {
-        return senhaUsuario;
+    public String getPasword() {
+        return pasword;
     }
 
-    public void setSenhaUsuario(String senhaUsuario) {
-        this.senhaUsuario = senhaUsuario;
+    public void setPasword(String pasword) {
+        this.pasword = pasword;
     }
 
 
@@ -69,9 +70,9 @@ public class User implements Serializable {
     public String toString() {
         return "Usuario{" +
                 "id=" + id +
-                ", nomeUsuario='" + nomeUsuario + '\'' +
-                ", emailUsuario='" + emailUsuario + '\'' +
-                ", senhaUsuario='" + senhaUsuario + '\'' +
+                ", nomeUsuario='" + name + '\'' +
+                ", emailUsuario='" + email + '\'' +
+                ", senhaUsuario='" + pasword + '\'' +
                 '}';
     }
 

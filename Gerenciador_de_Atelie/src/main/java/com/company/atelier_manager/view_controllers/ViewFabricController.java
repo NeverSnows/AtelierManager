@@ -40,8 +40,8 @@ public class ViewFabricController {
                 try{
                     priceTextField.setText("");
                     double valueDouble = Double.parseDouble(value);
-                    selectedFabric.setNome(name);
-                    selectedFabric.setPreco(valueDouble);
+                    selectedFabric.setName(name);
+                    selectedFabric.setValue(valueDouble);
 
                     DatabaseManager.registerFabric(selectedFabric);
                     AtelieManagerApplication.swapToMain();
@@ -52,8 +52,8 @@ public class ViewFabricController {
 
     public void updateFabricInfo() throws IndexOutOfBoundsException{
         Fabric selectedFabric = CurrentSessionSingleton.getInstance().observableFabrics.get(CurrentSessionSingleton.getInstance().selectedTableIndex);
-        nameTextField.setText(selectedFabric.getNome());
-        priceTextField.setText(String.valueOf(selectedFabric.getPreco()));
+        nameTextField.setText(selectedFabric.getName());
+        priceTextField.setText(String.valueOf(selectedFabric.getValue()));
     }
 
     @FXML

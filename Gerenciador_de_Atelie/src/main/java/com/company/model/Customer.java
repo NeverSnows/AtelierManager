@@ -4,31 +4,31 @@ import javax.persistence.*;
 import java.util.List;
 @Entity
 @Table(name = "Cliente")
-public class Customer {
+public class Customer implements Identificavel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
-    private String telefone;
+    private String name;
+    private String phoneNumber;
     private String email;
-    @OneToMany(mappedBy = "customer")
-    private List<MeasureCliente> medidas; // medidas do cliente
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<MeasureCliente> measures; // medidas do cliente
 
     public Customer() {
     }
 
-    public Customer(String nome, String telefone, String email, List<MeasureCliente> medidas) {
-        this.nome = nome;
-        this.telefone = telefone;
+    public Customer(String name, String phoneNumber, String email, List<MeasureCliente> measures) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
         this.email = email;
-        this.medidas = medidas;
+        this.measures = measures;
     }
-    public Customer(Long id, String nome, String telefone, String email, List<MeasureCliente> medidas) {
+    public Customer(Long id, String name, String phoneNumber, String email, List<MeasureCliente> measures) {
         this.id = id;
-        this.nome = nome;
-        this.telefone = telefone;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
         this.email = email;
-        this.medidas = medidas;
+        this.measures = measures;
     }
 
     public Long getId() {
@@ -39,20 +39,20 @@ public class Customer {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmail() {
@@ -63,11 +63,11 @@ public class Customer {
         this.email = email;
     }
 
-    public List<MeasureCliente> getMedidas() {
-        return medidas;
+    public List<MeasureCliente> getMeasures() {
+        return measures;
     }
 
-    public void setMedidas(List<MeasureCliente> medidas) {
-        this.medidas = medidas;
+    public void setMeasures(List<MeasureCliente> measures) {
+        this.measures = measures;
     }
 }

@@ -3,7 +3,6 @@ package com.company.atelier_manager.view_controllers;
 import com.company.atelier_manager.AtelieManagerApplication;
 import com.company.atelier_manager.CurrentSessionSingleton;
 import com.company.atelier_manager.DatabaseManager;
-import com.company.atelier_manager.structure.*;
 import com.company.model.*;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -125,9 +124,9 @@ public class ViewEstimateController implements Initializable {
                 if(observations.isBlank()){
                     observations = "No Observations";
                 }
-                selectedEstimate.setCliente(customer);
-                selectedEstimate.setItensPedido(items);
-                selectedEstimate.setObservacoes(observations);
+                selectedEstimate.setCustomer(customer);
+                selectedEstimate.setOrderItems(items);
+                selectedEstimate.setObservations(observations);
 
                 DatabaseManager.registerEstimate(selectedEstimate);
                 AtelieManagerApplication.swapToMain();
@@ -142,7 +141,7 @@ public class ViewEstimateController implements Initializable {
             totalValueField.setText("0.00");
         }else{
             for(OrderItem item : itemsComboBox.getItems()){
-                outputSum += item.getValorItem();
+                outputSum += item.getTotalPrice();
             }
             totalValueField.setText(String.valueOf(outputSum));
         }
@@ -151,9 +150,9 @@ public class ViewEstimateController implements Initializable {
     public void updateEstimateInfo() throws IndexOutOfBoundsException{
         Estimate selectedEstimate = CurrentSessionSingleton.getInstance().observableEstimate.get(CurrentSessionSingleton.getInstance().selectedTableIndex);
         customerComboBox.setItems(CurrentSessionSingleton.getInstance().observableCustomers);
-        customerComboBox.setValue(selectedEstimate.getCliente());
-        itemsComboBox.setItems(FXCollections.observableArrayList(selectedEstimate.getItensPedido()));
-        observationsField.setText(selectedEstimate.getObservacoes());
+        customerComboBox.setValue(selectedEstimate.getCustomer());
+        itemsComboBox.setItems(FXCollections.observableArrayList(selectedEstimate.getOrderItems()));
+        observationsField.setText(selectedEstimate.getObservations());
         updateTotalDisplay();
     }
 
@@ -162,7 +161,7 @@ public class ViewEstimateController implements Initializable {
         customerComboBox.setConverter(new StringConverter<Customer>() {
             @Override
             public String toString(Customer customer) {
-                return customer.getNome();
+                return customer.getName();
             }
 
             @Override
@@ -196,7 +195,7 @@ public class ViewEstimateController implements Initializable {
         fabricComboBox.setConverter(new StringConverter<Fabric>() {
             @Override
             public String toString(Fabric fabric) {
-                return fabric.getNome();
+                return fabric.getName();
             }
 
             @Override
@@ -218,7 +217,7 @@ public class ViewEstimateController implements Initializable {
         extraRequirementComboBox.setConverter(new StringConverter<ExtraRequirement>() {
             @Override
             public String toString(ExtraRequirement extraRequirement) {
-                return extraRequirement.getNome() + ": " + extraRequirement.getValorAdicional();
+                return extraRequirement.getName() + ": " + extraRequirement.getValue();
             }
 
             @Override
@@ -229,7 +228,7 @@ public class ViewEstimateController implements Initializable {
         itemsComboBox.setConverter(new StringConverter<OrderItem>() {
             @Override
             public String toString(OrderItem orderItem) {
-                return "Item Piece: " + orderItem.getPeca().getName();
+                return "Item Piece: " + orderItem.getPiece().getName();
             }
 
             @Override

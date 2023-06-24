@@ -4,21 +4,21 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Modelo")
-public class Model {
+public class Model implements Identificavel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
-    private Double preco;
+    private String name;
+    private Double value;
     public Model() {}
-    public Model(String nome, Double preco) {
-        this.nome = nome;
-        this.preco = preco;
+    public Model(String nome, Double value) {
+        this.name = nome;
+        this.value = value;
     }
-    public Model(Long id, String nome, Double preco) {
+    public Model(Long id, String nome, Double value) {
         this.id = id;
-        this.nome = nome;
-        this.preco = preco;
+        this.name = nome;
+        this.value = value;
     }
 
     public Long getId() {
@@ -29,19 +29,19 @@ public class Model {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Double getPreco() {
-        return preco;
+    public Double getValue() {
+        return value;
     }
 
-    public void setPreco(Double preco) {
-        this.preco = preco;
+    public void setValue(Double value) {
+        this.value = value;
     }
 }

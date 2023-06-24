@@ -1,13 +1,12 @@
 package com.company.model;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "MedidaCliente")
 public class MeasureCliente extends Measure {
+
+
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Customer customer;
@@ -29,7 +28,11 @@ public class MeasureCliente extends Measure {
         super(name, value);
     }
 
-    // Atributos específicos das medidas da roupa
+    public Customer getCustomer() {
+        return customer;
+    }
 
-    // Getters e setters
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 }

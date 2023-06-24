@@ -9,8 +9,8 @@ public class AdicionalDAO extends GenericDAO<ExtraRequirement>{
     @Override
     public ExtraRequirement buscarPorId(Long id) {
         try {
-            String instrucaoSQL = "SELECT a FROM Adicional a " +
-                    "JOIN FETCH a.itempedido " +
+            String instrucaoSQL = "SELECT a FROM ExtraRequirement a " +
+                    "JOIN FETCH a.orderItem " +
                     "WHERE a.id = :id";
             return EntityManager.getEM()
                     .createQuery(instrucaoSQL, ExtraRequirement.class)
@@ -25,13 +25,13 @@ public class AdicionalDAO extends GenericDAO<ExtraRequirement>{
 
     @Override
     public List<ExtraRequirement> buscarTodos() {
-        String instrucaoSQL = "SELECT a FROM Adicional a";
+        String instrucaoSQL = "SELECT a FROM ExtraRequirement a";
         return EntityManager.getEM().createQuery(instrucaoSQL, ExtraRequirement.class).getResultList();
     }
 
     @Override
     public List<ExtraRequirement> buscarTodosComFiltro(String atributo, String valor) {
-        String instrucaoSQL = "SELECT a FROM Adicional a WHERE a." + atributo +
+        String instrucaoSQL = "SELECT a FROM ExtraRequirement a WHERE a." + atributo +
                 " like '%" + valor + "%'";
         return EntityManager.getEM().createQuery(instrucaoSQL, ExtraRequirement.class).getResultList();
     }

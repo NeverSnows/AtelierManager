@@ -10,43 +10,49 @@ public class Piece implements Identificavel{
 
     private Long id;
     private String name;
-    private Double precoBase;
-    @OneToMany(mappedBy = "piece")
-    private List<MeasurePeca> medidas;
+    private Double value;
+    @OneToMany(mappedBy = "piece", cascade = CascadeType.ALL)
+    private List<MeasurePeca> measures;
     @ManyToOne
-    private Model modelo;
+    private Model model;
 
-    @OneToMany(mappedBy = "piece")
-    private List<OrderItem> itensPedido;
+    @OneToMany(mappedBy = "piece", cascade = CascadeType.ALL)
+    private List<OrderItem> orderItems;
 
     public Piece(){}
-    public Piece(String name, Double precoBase){
+    public Piece(String name, Double value){
        this.name = name;
-       this.precoBase = precoBase;
+       this.value = value;
     }
-    public Piece(String name, Double precoBase, List<MeasurePeca> medidas,
-                 Model modelo, List<OrderItem> itensPedido) {
+    public Piece(String name, Double value, List<MeasurePeca> measures,
+                 Model model, List<OrderItem> orderItems) {
         this.name = name;
-        this.precoBase = precoBase;
-        this.medidas = medidas;
-        this.modelo = modelo;
-        this.itensPedido = itensPedido;
+        this.value = value;
+        this.measures = measures;
+        this.model = model;
+        this.orderItems = orderItems;
     }
-    public Piece(Long id, String name, Double precoBase, List<MeasurePeca> medidas,
-                 Model modelo, List<OrderItem> itensPedido) {
+    public Piece(Long id, String name, Double value, List<MeasurePeca> measures,
+                 Model model, List<OrderItem> orderItems) {
         this.id = id;
         this.name = name;
-        this.precoBase = precoBase;
-        this.medidas = medidas;
-        this.modelo = modelo;
-        this.itensPedido = itensPedido;
+        this.value = value;
+        this.measures = measures;
+        this.model = model;
+        this.orderItems = orderItems;
     }
-
-    public Piece(String name, double priceDouble, List<MeasurePeca> measures, Model model) {
+    public Piece(long id, String name, double value, List<MeasurePeca> measures, Model model) {
+        this.id = id;
         this.name = name;
-        this.precoBase = priceDouble;
-        this.medidas = measures;
-        this.modelo = model;
+        this.value = value;
+        this.measures = measures;
+        this.model = model;
+    }
+    public Piece(String name, double value, List<MeasurePeca> measures, Model model) {
+        this.name = name;
+        this.value = value;
+        this.measures = measures;
+        this.model = model;
     }
 
     public Long getId() {
@@ -65,28 +71,31 @@ public class Piece implements Identificavel{
         this.name = name;
     }
 
-    public Double getPrecoBase() {
-        return precoBase;
+    public Double getValue() {
+        return value;
     }
 
-    public void setPrecoBase(Double precoBase) {
-        this.precoBase = precoBase;
+    public void setValue(Double value) {
+        this.value = value;
     }
 
-    public Model getModelo() {
-        return modelo;
+    public Model getModel() {
+        return model;
     }
 
-    public void setModelo(Model modelo) {
-        this.modelo = modelo;
+    public void setModel(Model model) {
+        this.model = model;
     }
 
-    public List<MeasurePeca> getMedidas() {
-        return medidas;
+    public List<MeasurePeca> getMeasures() {
+        return measures;
     }
 
-    public void setMedidas(List<MeasurePeca> medidas) {
-        this.medidas = medidas;
+    public void setMeasures(List<MeasurePeca> measures) {
+        this.measures = measures;
     }
 
+    public String getModelName(){
+        return this.model.getName();
+    }
 }

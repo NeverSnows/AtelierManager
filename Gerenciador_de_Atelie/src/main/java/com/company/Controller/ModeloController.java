@@ -9,10 +9,15 @@ public class ModeloController {
     private static ModeloDAO md = new ModeloDAO();
 
     public static void insereModelo(Model modelo){
-        md.inserir(modelo);
+        md.atualizar(modelo);
     }
 
     public static List<Model> retornaModelos(){
         return md.buscarTodos();
     }
+
+    public static void deletaModelo(Model modelo){
+        md.deletar(modelo);
+    }
+
 }
